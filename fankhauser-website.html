@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="T. Fankhauser GmbH – Professionelle Beschichtungstechnik in Wittenbach SG. Pulverbeschichtung, Nasslackierung und Spezialbeschichtungen für höchste Ansprüche. 100% Termintreue.">
+    <meta name="keywords" content="Pulverbeschichtung, Nasslackierung, Beschichtung Schweiz, Korrosionsschutz, Spezialbeschichtungen, Wittenbach, St. Gallen">
+    <meta name="author" content="T. Fankhauser GmbH">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="T. Fankhauser GmbH – Beschichtungstechnik">
+    <meta property="og:description" content="Ihr Partner für professionelle Beschichtungslösungen in der Schweiz. Höchste Qualität, maximale Flexibilität, 100% Termintreue.">
+    <meta property="og:type" content="website">
+    
+    <title>T. Fankhauser GmbH – Beschichtungstechnik | Pulverbeschichtung & Nasslackierung</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Premium Swiss Industrial Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Premium Color Palette - Swiss Industrial */
+            --primary-blue: #0A2463;
+            --deep-navy: #0D1B2A;
+            --steel-blue: #1B4965;
+            --accent-blue: #3E92CC;
+            --light-blue: #CAE9FF;
+            
+            --eco-green: #2D6A4F;
+            --accent-green: #52B788;
+            --light-green: #95D5B2;
+            
+            --anthracite: #2B2D42;
+            --medium-gray: #8D99AE;
+            --light-gray: #EDF2F4;
+            --off-white: #F8F9FA;
+            
+            --accent-orange: #FB5607;
+            --white: #FFFFFF;
+            
+            /* Typography */
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+            
+            /* Spacing */
+            --section-padding: 7rem;
+            --section-padding-mobile: 4rem;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--anthracite);
+            background-color: var(--off-white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .animate-slide-in-left {
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .animate-slide-in-right {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        .animate-scale-in {
+            animation: scaleIn 0.6s ease-out forwards;
+        }
+
+        /* Delay classes */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+
+        /* Initially hidden for animation */
+        .fade-in-up, .fade-in, .slide-in-left, .slide-in-right, .scale-in {
+            opacity: 0;
+        }
+
+        /* Gradient Backgrounds */
+        .gradient-hero {
+            background: linear-gradient(135deg, var(--deep-navy) 0%, var(--primary-blue) 50%, var(--steel-blue) 100%);
+        }
+
+        .gradient-overlay {
+            background: linear-gradient(to right, rgba(10, 36, 99, 0.95), rgba(10, 36, 99, 0.7));
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Premium Card Styles */
+        .premium-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .premium-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        /* CTA Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue), var(--steel-blue));
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-family: var(--font-display);
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(62, 146, 204, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(62, 146, 204, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-blue);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-family: var(--font-display);
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        /* Navigation Styles */
+        .nav-sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link {
+            color: var(--anthracite);
+            text-decoration: none;
+            font-weight: 500;
+            font-family: var(--font-display);
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 1rem;
+            right: 1rem;
+            height: 2px;
+            background: var(--accent-blue);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+
+        .nav-link:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--deep-navy);
+            z-index: 999;
+            padding: 6rem 2rem 2rem;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+            flex-direction: column;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .mobile-nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 600;
+            font-family: var(--font-display);
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+            margin: 4rem auto;
+            max-width: 200px;
+        }
+
+        /* Stats Counter */
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            font-family: var(--font-display);
+            line-height: 1;
+        }
+
+        /* Service Cards with Icons */
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--accent-blue), var(--steel-blue));
+            color: white;
+        }
+
+        /* Project Gallery */
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            aspect-ratio: 4/3;
+            background: var(--medium-gray);
+        }
+
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10, 36, 99, 0.9), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        /* Trust Badges */
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: white;
+            border-radius: 50px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        /* Review Stars */
+        .star-rating {
+            color: #FFB800;
+            font-size: 1.25rem;
+        }
+
+        /* Form Styles */
+        .form-input {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(62, 146, 204, 0.1);
+        }
+
+        textarea.form-input {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* Timeline */
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--accent-blue);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 16px;
+            bottom: -2rem;
+            width: 2px;
+            background: var(--light-gray);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        /* Responsive Video Container */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(62, 146, 204, 0.4);
+            z-index: 900;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(62, 146, 204, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: var(--section-padding-mobile);
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+        }
+
+        /* Loading State */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Success Message */
+        .success-message {
+            background: var(--eco-green);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: fadeInUp 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="nav-sticky" id="header">
+        <nav class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">TF</span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="font-bold text-lg" style="font-family: var(--font-display); color: var(--primary-blue);">T. Fankhauser GmbH</div>
+                        <div class="text-xs text-gray-600">Beschichtungstechnik</div>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#ueber-uns" class="nav-link">Über uns</a>
+                    <a href="#leistungen" class="nav-link">Leistungen</a>
+                    <a href="#referenzen" class="nav-link">Referenzen</a>
+                    <a href="#oekologie" class="nav-link">Ökologie</a>
+                    <a href="#qualitaet" class="nav-link">Qualität</a>
+                    <a href="#kontakt" class="btn-primary" style="padding: 0.75rem 1.75rem;">Kontakt</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden" id="mobile-menu-btn" aria-label="Menu">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="absolute top-6 right-6 text-white text-3xl" id="mobile-menu-close">&times;</button>
+        <a href="#home" class="mobile-nav-link">Home</a>
+        <a href="#ueber-uns" class="mobile-nav-link">Über uns</a>
+        <a href="#leistungen" class="mobile-nav-link">Leistungen</a>
+        <a href="#referenzen" class="mobile-nav-link">Referenzen</a>
+        <a href="#oekologie" class="mobile-nav-link">Ökologie</a>
+        <a href="#qualitaet" class="mobile-nav-link">Qualität</a>
+        <a href="#kontakt" class="mobile-nav-link">Kontakt</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-hero min-h-screen flex items-center relative overflow-hidden" style="padding-top: 80px;">
+        <!-- Decorative Elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-teal-400 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="text-white fade-in-up">
+                    <div class="inline-block mb-4">
+                        <span class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold">Seit 1997 in der Schweiz</span>
+                    </div>
+                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Höchste Qualität in der <span class="gradient-text" style="background: linear-gradient(135deg, #CAE9FF, #52B788); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Beschichtungstechnik</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-blue-100 leading-relaxed">
+                        Ihr zuverlässiger Partner für Pulverbeschichtung, Nasslackierung und Spezialbeschichtungen. Maximale Flexibilität, höchste Präzision und 100% Termintreue für Ihre Projekte.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <a href="#kontakt" class="btn-primary bg-white text-blue-900 hover:bg-blue-50">
+                            Offerte anfragen
+                        </a>
+                        <a href="#leistungen" class="btn-secondary border-white text-white hover:bg-white hover:text-blue-900">
+                            Unsere Leistungen
+                        </a>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="flex flex-wrap gap-4">
+                        <div class="trust-badge">
+                            <span class="text-2xl">✓</span>
+                            <span>100% Termintreue</span>
+                        </div>
+                        <div class="trust-badge">
+                            <span class="text-2xl">🇨🇭</span>
+                            <span>Swiss Quality</span>
+                        </div>
+                        <div class="trust-badge">
+                            <span class="text-2xl">🌱</span>
+                            <span>Umweltbewusst</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content - Stats -->
+                <div class="grid grid-cols-2 gap-6 fade-in-up delay-200">
+                    <div class="premium-card p-6 text-center">
+                        <div class="stat-number gradient-text">25+</div>
+                        <div class="text-gray-600 font-semibold mt-2">Jahre Erfahrung</div>
+                    </div>
+                    <div class="premium-card p-6 text-center">
+                        <div class="stat-number gradient-text">7.2m</div>
+                        <div class="text-gray-600 font-semibold mt-2">Max. Teillänge</div>
+                    </div>
+                    <div class="premium-card p-6 text-center">
+                        <div class="stat-number gradient-text">100%</div>
+                        <div class="text-gray-600 font-semibold mt-2">Termintreue</div>
+                    </div>
+                    <div class="premium-card p-6 text-center">
+                        <div class="stat-number gradient-text">500+</div>
+                        <div class="text-gray-600 font-semibold mt-2">Zufriedene Kunden</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+            <a href="#ueber-uns" class="text-white opacity-75 hover:opacity-100 transition-opacity">
+                <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Über uns Section -->
+    <section id="ueber-uns" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4" style="color: var(--primary-blue);">Über uns</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Seit mehr als 25 Jahren Ihr verlässlicher Partner für professionelle Beschichtungslösungen
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div class="fade-in-left">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--primary-blue);">Tradition trifft Innovation</h3>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">
+                        Die T. Fankhauser GmbH wurde um 1997 von Thomas Fankhauser in Wittenbach, St. Gallen gegründet und hat sich seither zu einem führenden Spezialisten für hochwertige Beschichtungstechnik in der Schweiz entwickelt.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">
+                        Unser Erfolgsrezept basiert auf drei Säulen: <strong>höchste Qualität</strong>, <strong>maximale Flexibilität</strong> und <strong>absolute Termintreue</strong>. Mit modernster Technologie und einem erfahrenen Team realisieren wir anspruchsvolle Beschichtungsprojekte für Kunden aus dem gesamten DACH-Raum.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Ob Metallbau, Maschinenbau, Architektur, Fassadenbau oder Medizinaltechnik – wir bieten massgeschneiderte Lösungen für Ihre individuellen Anforderungen.
+                    </p>
+                </div>
+
+                <div class="fade-in-right">
+                    <div class="bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-2xl">
+                        <h4 class="text-2xl font-bold mb-6" style="color: var(--primary-blue);">Unsere Werte</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background: var(--accent-blue); color: white;">✓</div>
+                                <div>
+                                    <div class="font-semibold text-lg">Qualität ohne Kompromisse</div>
+                                    <div class="text-gray-600">Höchste Standards in jedem Arbeitsschritt</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background: var(--accent-blue); color: white;">✓</div>
+                                <div>
+                                    <div class="font-semibold text-lg">Zuverlässigkeit</div>
+                                    <div class="text-gray-600">100% Termintreue bei allen Projekten</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background: var(--accent-blue); color: white;">✓</div>
+                                <div>
+                                    <div class="font-semibold text-lg">Umweltverantwortung</div>
+                                    <div class="text-gray-600">Nachhaltige Verfahren und Ressourcenschonung</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background: var(--accent-blue); color: white;">✓</div>
+                                <div>
+                                    <div class="font-semibold text-lg">Innovation</div>
+                                    <div class="text-gray-600">Modernste Technologie und kontinuierliche Weiterentwicklung</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-3xl font-bold text-center mb-12" style="color: var(--primary-blue);">Unsere Geschichte</h3>
+                <div class="space-y-0">
+                    <div class="timeline-item">
+                        <div class="font-bold text-xl mb-1" style="color: var(--primary-blue);">~1997</div>
+                        <div class="font-semibold text-lg mb-2">Gründung</div>
+                        <div class="text-gray-600">Thomas Fankhauser gründet die Firma in Wittenbach SG mit dem Fokus auf hochwertige Pulverbeschichtung</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="font-bold text-xl mb-1" style="color: var(--primary-blue);">2000er</div>
+                        <div class="font-semibold text-lg mb-2">Expansion</div>
+                        <div class="text-gray-600">Erweiterung des Leistungsportfolios um Nasslackierung und erste Spezialbeschichtungen</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="font-bold text-xl mb-1" style="color: var(--primary-blue);">2010er</div>
+                        <div class="font-semibold text-lg mb-2">Technologieführerschaft</div>
+                        <div class="text-gray-600">Investitionen in modernste Anlagentechnik und Entwicklung innovativer Beschichtungssysteme</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="font-bold text-xl mb-1" style="color: var(--primary-blue);">Heute</div>
+                        <div class="font-semibold text-lg mb-2">Marktführer in der Region</div>
+                        <div class="text-gray-600">Anerkannter Spezialist für anspruchsvolle Beschichtungslösungen mit überregionaler Kundenbase</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leistungen Section -->
+    <section id="leistungen" class="py-24" style="background: linear-gradient(to bottom, var(--off-white), white);">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4" style="color: var(--primary-blue);">Unsere Leistungen</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Umfassendes Beschichtungsportfolio für höchste Ansprüche – von der Vorbehandlung bis zur finalen Spezialveredelung
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Service 1: Pulverbeschichtung -->
+                <div class="premium-card p-8 fade-in-up">
+                    <div class="service-icon">
+                        <span>⚡</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3" style="color: var(--primary-blue);">Pulverbeschichtung</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Elektrostatische Pulverbeschichtung für höchste Oberflächengüte und Haltbarkeit. Ideal für Metallteile aller Art mit hervorragenden mechanischen und optischen Eigenschaften.
+                    </p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Hochglanz, Matt, Feinstruktur</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Alle RAL- und Sonderfarben</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Umweltfreundlich, lösemittelfrei</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Sehr gute Korrosionsbeständigkeit</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: Nasslackierung -->
+                <div class="premium-card p-8 fade-in-up delay-100">
+                    <div class="service-icon" style="background: linear-gradient(135deg, var(--eco-green), var(--accent-green));">
+                        <span>💧</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3" style="color: var(--primary-blue);">Nasslackierung</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Professionelle Nasslackierung für besondere Anforderungen an Optik und Oberflächenqualität. Perfekt für hochglänzende und spezielle Effektlackierungen.
+                    </p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>2K-Lackierungen</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Metallic- und Effektlacke</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Hochglanzfinish möglich</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Individuelle Farbanpassungen</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 3: Spezialbeschichtungen -->
+                <div class="premium-card p-8 fade-in-up delay-200">
+                    <div class="service-icon" style="background: linear-gradient(135deg, var(--accent-orange), #FF6B35);">
+                        <span>🛡️</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3" style="color: var(--primary-blue);">Spezialbeschichtungen</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Innovative Funktionsbeschichtungen für extreme Anforderungen in Industrie, Architektur und Spezialanwendungen.
+                    </p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Duplex-Systeme (C1–C5)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Anti-Graffiti & Easy-to-Clean</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>ESD / Antistatisch</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Antimikrobiell (Silberionen)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 4: Vorbehandlung -->
+                <div class="premium-card p-8 fade-in-up delay-300">
+                    <div class="service-icon" style="background: linear-gradient(135deg, var(--steel-blue), var(--primary-blue));">
+                        <span>🔬</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3" style="color: var(--primary-blue);">Vorbehandlung</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Professionelle Oberflächenvorbereitung als Grundlage für perfekte Beschichtungsergebnisse und langfristige Haltbarkeit.
+                    </p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Entfettung und Reinigung</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Chromatierung / Phosphatierung</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Beizen und Passivierung</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Strahlen nach Bedarf</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 5: Korrosionsschutz -->
+                <div class="premium-card p-8 fade-in-up delay-400">
+                    <div class="service-icon" style="background: linear-gradient(135deg, #6A4C93, #8D5A97);">
+                        <span>🔒</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3" style="color: var(--primary-blue);">Korrosionsschutz</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Hochleistungs-Korrosionsschutzsysteme für extreme Witterungsbedingungen und chemische Belastungen nach DIN EN ISO 12944.
+                    </p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Korrosivitätskategorien C1–C5</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Mehrschicht-Systeme</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Duplex-Beschichtungen</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Langzeitschutz garantiert</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 6: Chemiebeständigkeit -->
+                <div class="premium-card p-8 fade-in-up delay-500">
+                    <div class="service-icon" style="background: linear-gradient(135deg, #118AB2, #06D6A0);">
+                        <span>⚗️</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3" style="color: var(--primary-blue);">Chemiebeständige Beschichtungen</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Spezielle Beschichtungen für die Lebensmittel-, Pharma- und Chemieindustrie mit höchsten Hygiene- und Resistenzanforderungen.
+                    </p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Säure- und laugenbeständig</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Lebensmittelecht</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>Sterilisierbar</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green);">✓</span>
+                            <span>GMP-konform</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Technical Specs -->
+            <div class="bg-gradient-to-br from-blue-900 to-blue-800 rounded-2xl p-8 md:p-12 text-white">
+                <h3 class="text-3xl font-bold mb-8 text-center">Technische Kapazitäten</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="text-5xl font-bold mb-2">7.200 mm</div>
+                        <div class="text-blue-200">Maximale Länge</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-bold mb-2">2.300 mm</div>
+                        <div class="text-blue-200">Maximale Breite</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-bold mb-2">2.850 mm</div>
+                        <div class="text-blue-200">Maximale Höhe</div>
+                    </div>
+                </div>
+                <p class="text-center text-blue-100 mt-8 text-lg">
+                    Damit gehören wir zu den leistungsstärksten Beschichtungsbetrieben der Region und können auch Grossteile problemlos bearbeiten.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referenzen Section -->
+    <section id="referenzen" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4" style="color: var(--primary-blue);">Referenzen & Projekte</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Vertrauen Sie auf unsere Erfahrung – über 500 zufriedene Kunden aus Industrie, Architektur und Handwerk
+                </p>
+            </div>
+
+            <!-- Project Gallery -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="project-card fade-in-up" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <div class="project-overlay">
+                        <h3 class="text-white text-xl font-bold mb-2">Industriefassade</h3>
+                        <p class="text-blue-100">Grossflächige Pulverbeschichtung für Fassadenelemente in RAL 7016</p>
+                    </div>
+                </div>
+                <div class="project-card fade-in-up delay-100" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="project-overlay">
+                        <h3 class="text-white text-xl font-bold mb-2">Maschinenbau-Komponenten</h3>
+                        <p class="text-blue-100">Hochpräzise Beschichtung mit ESD-Eigenschaften für Medizinaltechnik</p>
+                    </div>
+                </div>
+                <div class="project-card fade-in-up delay-200" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div class="project-overlay">
+                        <h3 class="text-white text-xl font-bold mb-2">Architektur-Projekt</h3>
+                        <p class="text-blue-100">Sonderfarbton mit Anti-Graffiti-Beschichtung für öffentliches Gebäude</p>
+                    </div>
+                </div>
+                <div class="project-card fade-in-up delay-300" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                    <div class="project-overlay">
+                        <h3 class="text-white text-xl font-bold mb-2">Geländer & Treppen</h3>
+                        <p class="text-blue-100">Duplex-System C5 für extreme Korrosionsbeständigkeit im Aussenbereich</p>
+                    </div>
+                </div>
+                <div class="project-card fade-in-up delay-400" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <div class="project-overlay">
+                        <h3 class="text-white text-xl font-bold mb-2">Lebensmittelindustrie</h3>
+                        <p class="text-blue-100">Lebensmittelechte, antibakterielle Beschichtung für Produktionsanlagen</p>
+                    </div>
+                </div>
+                <div class="project-card fade-in-up delay-500" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                    <div class="project-overlay">
+                        <h3 class="text-white text-xl font-bold mb-2">Stahlbau-Konstruktionen</h3>
+                        <p class="text-blue-100">Mehrschichtige Korrosionsschutzbeschichtung nach DIN EN ISO 12944</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Client Logos -->
+            <div class="bg-gray-50 rounded-2xl p-8 md:p-12">
+                <h3 class="text-2xl font-bold text-center mb-8" style="color: var(--primary-blue);">Ausgewählte Referenzkunden</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+                    <div class="bg-white p-6 rounded-lg text-center font-bold text-gray-400 border-2 border-gray-200">
+                        Matti Engineering
+                    </div>
+                    <div class="bg-white p-6 rounded-lg text-center font-bold text-gray-400 border-2 border-gray-200">
+                        Bleiker AG
+                    </div>
+                    <div class="bg-white p-6 rounded-lg text-center font-bold text-gray-400 border-2 border-gray-200">
+                        Mirad Group
+                    </div>
+                    <div class="bg-white p-6 rounded-lg text-center font-bold text-gray-400 border-2 border-gray-200">
+                        Regional KMUs
+                    </div>
+                </div>
+                <p class="text-center text-gray-600 mt-8">
+                    Und viele weitere zufriedene Kunden aus Industrie, Handwerk und Architektur
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Reviews Section -->
+    <section class="py-24" style="background: linear-gradient(135deg, var(--light-blue), var(--light-green));">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4" style="color: var(--primary-blue);">Was unsere Kunden sagen</h2>
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <div class="star-rating">★★★★★</div>
+                    <span class="font-bold text-xl">4.9 / 5.0</span>
+                </div>
+                <a href="https://maps.app.goo.gl/j9nyJ2xA7xfe5MSU9" target="_blank" rel="noopener" class="text-blue-700 hover:text-blue-900 font-semibold underline">
+                    Alle Bewertungen auf Google ansehen →
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="premium-card p-6">
+                    <div class="star-rating mb-3">★★★★★</div>
+                    <p class="text-gray-700 italic mb-4">
+                        "Absolut zuverlässig und höchste Qualität. Die Teile waren perfekt beschichtet und pünktlich geliefert. Sehr professionelle Abwicklung!"
+                    </p>
+                    <div class="font-semibold">– Kunde aus Zürich</div>
+                </div>
+                <div class="premium-card p-6">
+                    <div class="star-rating mb-3">★★★★★</div>
+                    <p class="text-gray-700 italic mb-4">
+                        "Kompetente Beratung und faire Preise. Wir arbeiten seit Jahren mit Fankhauser zusammen und sind sehr zufrieden mit der Zusammenarbeit."
+                    </p>
+                    <div class="font-semibold">– Metallbaubetrieb SG</div>
+                </div>
+                <div class="premium-card p-6">
+                    <div class="star-rating mb-3">★★★★★</div>
+                    <p class="text-gray-700 italic mb-4">
+                        "Auch komplexe Spezialbeschichtungen werden hier erstklassig umgesetzt. Absolute Empfehlung für anspruchsvolle Projekte!"
+                    </p>
+                    <div class="font-semibold">– Architekturbüro TG</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ökologie Section -->
+    <section id="oekologie" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in-left">
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6" style="color: var(--eco-green);">Ökologie & Nachhaltigkeit</h2>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        Umweltschutz ist für uns nicht nur ein Schlagwort, sondern gelebte Praxis. Wir setzen konsequent auf umweltfreundliche Verfahren und modernste Technologien, um Ressourcen zu schonen und Emissionen zu minimieren.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent-green); color: white;">
+                                <span class="text-xl">🌱</span>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-lg mb-1">Lösemittelfreie Pulverbeschichtung</div>
+                                <div class="text-gray-600">Keine VOC-Emissionen, 100% umweltfreundlich und gesundheitsschonend</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent-green); color: white;">
+                                <span class="text-xl">♻️</span>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-lg mb-1">Pulverrückgewinnung</div>
+                                <div class="text-gray-600">Überschüssiges Pulver wird vollständig recycelt und wiederverwendet</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent-green); color: white;">
+                                <span class="text-xl">⚡</span>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-lg mb-1">Energieeffiziente Anlagen</div>
+                                <div class="text-gray-600">Moderne Öfen mit optimierter Wärmerückgewinnung</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent-green); color: white;">
+                                <span class="text-xl">💧</span>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-lg mb-1">Geschlossene Wasserkreisläufe</div>
+                                <div class="text-gray-600">Minimaler Wasserverbrauch durch intelligente Aufbereitungssysteme</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent-green); color: white;">
+                                <span class="text-xl">📋</span>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-lg mb-1">Umweltkonformes Abfallmanagement</div>
+                                <div class="text-gray-600">Fachgerechte Entsorgung und Wiederverwertung aller Reststoffe</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-in-right">
+                    <div class="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-2xl mb-6">
+                        <h3 class="text-2xl font-bold mb-6" style="color: var(--eco-green);">Unser ökologischer Beitrag</h3>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold mb-2" style="color: var(--eco-green);">-85%</div>
+                                <div class="text-gray-600 text-sm">Weniger Emissionen vs. Nasslack</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold mb-2" style="color: var(--eco-green);">98%</div>
+                                <div class="text-gray-600 text-sm">Pulverrückgewinnung</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold mb-2" style="color: var(--eco-green);">100%</div>
+                                <div class="text-gray-600 text-sm">VOC-freie Verfahren</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold mb-2" style="color: var(--eco-green);">-40%</div>
+                                <div class="text-gray-600 text-sm">Energieverbrauch seit 2015</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-blue-900 to-green-900 p-8 rounded-2xl text-white">
+                        <h4 class="text-xl font-bold mb-3">Langlebigkeit schützt die Umwelt</h4>
+                        <p class="text-blue-100 leading-relaxed">
+                            Hochwertige Beschichtungen bedeuten längere Lebensdauer Ihrer Bauteile. Weniger Neuanschaffungen, weniger Ressourcenverbrauch – ein direkter Beitrag zum Umweltschutz und zur Nachhaltigkeit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualität Section -->
+    <section id="qualitaet" class="py-24" style="background: linear-gradient(to bottom, var(--off-white), white);">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4" style="color: var(--primary-blue);">Qualität & Präzision</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Unser Qualitätsanspruch beginnt bei der Materialannahme und endet erst bei der finalen Auslieferung
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="premium-card p-8">
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">Unser Qualitätsprozess</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent-blue); color: white; font-weight: bold;">1</div>
+                            <div>
+                                <div class="font-semibold">Eingangskontrolle</div>
+                                <div class="text-gray-600 text-sm">Prüfung aller Teile auf Beschaffenheit und Vorbehandlungsbedarf</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent-blue); color: white; font-weight: bold;">2</div>
+                            <div>
+                                <div class="font-semibold">Vorbehandlung nach Norm</div>
+                                <div class="text-gray-600 text-sm">Professionelle Reinigung und Oberflächenvorbereitung</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent-blue); color: white; font-weight: bold;">3</div>
+                            <div>
+                                <div class="font-semibold">Präzise Beschichtung</div>
+                                <div class="text-gray-600 text-sm">Automatisierte und manuelle Prozesse je nach Anforderung</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent-blue); color: white; font-weight: bold;">4</div>
+                            <div>
+                                <div class="font-semibold">Qualitätskontrolle</div>
+                                <div class="text-gray-600 text-sm">Visuelle und messtechnische Endkontrolle jedes Teils</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent-blue); color: white; font-weight: bold;">5</div>
+                            <div>
+                                <div class="font-semibold">Sichere Verpackung</div>
+                                <div class="text-gray-600 text-sm">Sorgfältige Verpackung zum Schutz der Oberflächen</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="premium-card p-8">
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">Prüfverfahren & Standards</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green); font-size: 1.25rem;">✓</span>
+                            <span><strong>Schichtdickenmessung</strong> – Präzise Kontrolle der Beschichtungsstärke</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green); font-size: 1.25rem;">✓</span>
+                            <span><strong>Gitterschnitttest</strong> – Haftfestigkeitsprüfung nach DIN EN ISO 2409</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green); font-size: 1.25rem;">✓</span>
+                            <span><strong>Salzsprühtest</strong> – Korrosionsbeständigkeit nach DIN EN ISO 9227</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green); font-size: 1.25rem;">✓</span>
+                            <span><strong>Farbtonkontrolle</strong> – Spektrophotometrische Farbmessung</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green); font-size: 1.25rem;">✓</span>
+                            <span><strong>Oberflächenprüfung</strong> – Glanz-, Struktur- und Defektkontrolle</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color: var(--accent-green); font-size: 1.25rem;">✓</span>
+                            <span><strong>Dokumentation</strong> – Lückenlose Rückverfolgbarkeit aller Prozessschritte</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Quality Promise -->
+            <div class="bg-gradient-to-r from-blue-900 to-blue-800 rounded-2xl p-12 text-white text-center">
+                <h3 class="text-3xl font-bold mb-6">Unser Qualitätsversprechen</h3>
+                <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Wir stehen zu 100% hinter unserer Arbeit. Sollte ein Beschichtungsergebnis nicht Ihren Erwartungen entsprechen, finden wir gemeinsam eine Lösung. Ihr Vertrauen ist unser höchstes Gut.
+                </p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <div class="flex items-center gap-2">
+                        <span class="text-2xl">✓</span>
+                        <span class="font-semibold">100% Termintreue</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-2xl">✓</span>
+                        <span class="font-semibold">Geprüfte Qualität</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-2xl">✓</span>
+                        <span class="font-semibold">Faire Preise</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-2xl">✓</span>
+                        <span class="font-semibold">Persönlicher Service</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt Section -->
+    <section id="kontakt" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4" style="color: var(--primary-blue);">Kontakt aufnehmen</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Wir freuen uns auf Ihre Anfrage. Kontaktieren Sie uns für ein unverbindliches Angebot oder eine fachliche Beratung.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="fade-in-left">
+                    <div class="premium-card p-8">
+                        <h3 class="text-2xl font-bold mb-6" style="color: var(--primary-blue);">Offerte anfragen</h3>
+                        <form id="contact-form" class="space-y-5">
+                            <div>
+                                <label class="block text-sm font-semibold mb-2 text-gray-700">Firma / Name *</label>
+                                <input type="text" name="name" required class="form-input" placeholder="Ihre Firma oder Name">
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2 text-gray-700">E-Mail *</label>
+                                    <input type="email" name="email" required class="form-input" placeholder="ihre@email.ch">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2 text-gray-700">Telefon</label>
+                                    <input type="tel" name="phone" class="form-input" placeholder="+41 ...">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2 text-gray-700">Betreff *</label>
+                                <input type="text" name="subject" required class="form-input" placeholder="z.B. Anfrage Pulverbeschichtung">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2 text-gray-700">Ihre Nachricht *</label>
+                                <textarea name="message" required class="form-input" placeholder="Beschreiben Sie Ihr Projekt oder Ihre Anfrage..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full">
+                                <span id="submit-text">Anfrage senden</span>
+                                <span id="submit-loading" class="loading" style="display: none;"></span>
+                            </button>
+                            <div id="success-message" class="success-message">
+                                ✓ Vielen Dank! Ihre Nachricht wurde erfolgreich versendet. Wir melden uns schnellstmöglich bei Ihnen.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="fade-in-right space-y-6">
+                    <!-- Address Card -->
+                    <div class="premium-card p-8">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--primary-blue);">📍 Standort</h3>
+                        <div class="space-y-2 text-gray-700">
+                            <p class="font-semibold text-lg">T. Fankhauser GmbH</p>
+                            <p>Beschichtungstechnik</p>
+                            <p>Industriestrasse 16</p>
+                            <p>CH-9300 Wittenbach SG</p>
+                            <p>Schweiz</p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Details Card -->
+                    <div class="premium-card p-8">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--primary-blue);">📞 Kontaktdaten</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="text-sm text-gray-600 mb-1">Telefon</div>
+                                <a href="tel:+41712900505" class="text-lg font-semibold hover:text-blue-700" style="color: var(--accent-blue);">
+                                    +41 (0)71 290 05 05
+                                </a>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-600 mb-1">E-Mail</div>
+                                <a href="mailto:info@beschichtungstechnik.ch" class="text-lg font-semibold hover:text-blue-700" style="color: var(--accent-blue);">
+                                    info@beschichtungstechnik.ch
+                                </a>
+                            </div>
+                            <div class="pt-4 border-t border-gray-200">
+                                <div class="text-sm text-gray-600 mb-2">Öffnungszeiten</div>
+                                <div class="text-gray-700">
+                                    <p>Montag – Freitag: 07:00 – 17:00 Uhr</p>
+                                    <p class="text-sm text-gray-500 mt-1">Terminvereinbarung empfohlen</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Google Reviews CTA -->
+                    <div class="premium-card p-8" style="background: linear-gradient(135deg, var(--accent-blue), var(--steel-blue)); color: white;">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="star-rating mb-2" style="color: #FFB800;">★★★★★</div>
+                                <div class="font-bold text-lg mb-1">4.9 / 5.0 auf Google</div>
+                                <div class="text-blue-100 text-sm">Über 50 Kundenbewertungen</div>
+                            </div>
+                            <a href="https://maps.app.goo.gl/j9nyJ2xA7xfe5MSU9" target="_blank" rel="noopener" class="btn-secondary border-white text-white hover:bg-white" style="padding: 0.75rem 1.5rem; white-space: nowrap;">
+                                Bewertungen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Maps -->
+            <div class="mt-12">
+                <h3 class="text-2xl font-bold mb-6 text-center" style="color: var(--primary-blue);">So finden Sie uns</h3>
+                <div class="rounded-2xl overflow-hidden shadow-lg" style="height: 450px;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2696.8!2d9.37!3d47.48!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDI4JzUwLjQiTiA5wrAyMicxMi4wIkU!5e0!3m2!1sde!2sch!4v1234567890"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <p class="text-center text-gray-600 mt-4">
+                    Gut erreichbar über die A1, Ausfahrt St. Gallen-Winkeln – nur 5 Minuten vom Autobahnanschluss
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">TF</span>
+                        </div>
+                        <div>
+                            <div class="font-bold">T. Fankhauser GmbH</div>
+                            <div class="text-sm text-gray-400">Beschichtungstechnik</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Ihr verlässlicher Partner für professionelle Beschichtungslösungen seit 1997.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#ueber-uns" class="hover:text-white transition">Über uns</a></li>
+                        <li><a href="#leistungen" class="hover:text-white transition">Leistungen</a></li>
+                        <li><a href="#referenzen" class="hover:text-white transition">Referenzen</a></li>
+                        <li><a href="#kontakt" class="hover:text-white transition">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Leistungen</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Pulverbeschichtung</li>
+                        <li>Nasslackierung</li>
+                        <li>Spezialbeschichtungen</li>
+                        <li>Korrosionsschutz</li>
+                        <li>Vorbehandlung</li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>Industriestrasse 16</li>
+                        <li>CH-9300 Wittenbach SG</li>
+                        <li class="pt-2">
+                            <a href="tel:+41712900505" class="hover:text-white transition">
+                                +41 (0)71 290 05 05
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@beschichtungstechnik.ch" class="hover:text-white transition">
+                                info@beschichtungstechnik.ch
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+                    <div>
+                        © 2026 T. Fankhauser GmbH – Alle Rechte vorbehalten
+                    </div>
+                    <div class="flex gap-6">
+                        <a href="#" class="hover:text-white transition">Impressum</a>
+                        <a href="#" class="hover:text-white transition">Datenschutz</a>
+                        <a href="#" class="hover:text-white transition">AGB</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="back-to-top" aria-label="Nach oben">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth scroll animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('fade-in-up')) {
+                        entry.target.classList.add('animate-fade-in-up');
+                    }
+                    if (entry.target.classList.contains('fade-in')) {
+                        entry.target.classList.add('animate-fade-in');
+                    }
+                    if (entry.target.classList.contains('fade-in-left')) {
+                        entry.target.classList.add('animate-slide-in-left');
+                    }
+                    if (entry.target.classList.contains('fade-in-right')) {
+                        entry.target.classList.add('animate-slide-in-right');
+                    }
+                    if (entry.target.classList.contains('scale-in')) {
+                        entry.target.classList.add('animate-scale-in');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animation elements
+        document.querySelectorAll('.fade-in-up, .fade-in, .fade-in-left, .fade-in-right, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Contact Form Handling
+        const contactForm = document.getElementById('contact-form');
+        const submitText = document.getElementById('submit-text');
+        const submitLoading = document.getElementById('submit-loading');
+        const successMessage = document.getElementById('success-message');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Show loading state
+            submitText.style.display = 'none';
+            submitLoading.style.display = 'inline-block';
+            
+            // Simulate form submission (replace with actual backend call)
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            
+            // Reset button
+            submitText.style.display = 'inline';
+            submitLoading.style.display = 'none';
+            
+            // Show success message
+            successMessage.classList.add('show');
+            contactForm.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        let lastScroll = 0;
+        const header = document.getElementById('header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+            
+            if (currentScroll > 100) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
