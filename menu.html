@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Menu - Friends of Friends. Specialty coffee, smash burgers, Filipino-inspired food, beer & wine, and pastries.">
+    <title>Menu - Friends of Friends | Coffee, Food & Drinks</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --color-terracotta: #D4745E;
+            --color-olive: #8B9556;
+            --color-espresso: #3D2817;
+            --color-cream: #F5F1E8;
+            --color-sage: #A8B5A0;
+            --color-black: #1A1A1A;
+            --bg-primary: #F5F1E8;
+            --bg-secondary: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #3D2817;
+            --text-muted: #6B6B6B;
+        }
+        
+        [data-theme="dark"] {
+            --bg-primary: #1A1A1A;
+            --bg-secondary: #2A2422;
+            --text-primary: #F5F1E8;
+            --text-secondary: #E8E4DC;
+            --text-muted: #A8A8A8;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 { font-family: 'DM Serif Display', serif; }
+        
+        nav {
+            backdrop-filter: blur(10px);
+            background-color: rgba(245, 241, 232, 0.95);
+            transition: all 0.3s ease;
+        }
+        [data-theme="dark"] nav { background-color: rgba(26, 26, 26, 0.95); }
+        nav.scrolled { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
+        
+        .btn-primary {
+            background-color: var(--color-terracotta);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            background-color: var(--color-espresso);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 116, 94, 0.3);
+        }
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active { transform: translateX(0); }
+        
+        .theme-toggle {
+            cursor: pointer;
+            width: 50px;
+            height: 26px;
+            background-color: var(--color-terracotta);
+            border-radius: 100px;
+            position: relative;
+        }
+        .theme-toggle-circle {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        [data-theme="dark"] .theme-toggle-circle { transform: translateX(24px); }
+        
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.3"/></svg>');
+            z-index: 9999;
+        }
+        
+        .tab-button {
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 2px solid transparent;
+        }
+        
+        .tab-button:hover {
+            background-color: var(--bg-secondary);
+        }
+        
+        .tab-button.active {
+            background-color: var(--color-terracotta);
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in forwards;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .menu-item {
+            transition: all 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateX(10px);
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="grain-overlay"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="/" class="flex items-center space-x-2 text-2xl font-bold">
+                <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="20" cy="20" r="8" fill="currentColor"/>
+                    <circle cx="20" cy="20" r="4" fill="var(--bg-primary)"/>
+                </svg>
+                <span style="font-family: 'DM Serif Display', serif;">Friends of Friends</span>
+            </a>
+            
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="/" class="font-medium hover:text-[var(--color-terracotta)] transition-colors">Home</a>
+                <a href="/about.html" class="font-medium hover:text-[var(--color-terracotta)] transition-colors">About</a>
+                <a href="/menu.html" class="font-medium text-[var(--color-terracotta)]">Menu</a>
+                <a href="/events.html" class="font-medium hover:text-[var(--color-terracotta)] transition-colors">Events</a>
+                <a href="/shop.html" class="font-medium hover:text-[var(--color-terracotta)] transition-colors">Shop</a>
+                <a href="/visit.html" class="font-medium hover:text-[var(--color-terracotta)] transition-colors">Visit Us</a>
+                <a href="/contact.html" class="font-medium hover:text-[var(--color-terracotta)] transition-colors">Contact</a>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-4">
+                <div class="theme-toggle" id="themeToggle"><div class="theme-toggle-circle"></div></div>
+                <a href="https://instagram.com/friendsoffriends.sd" target="_blank" class="text-xl hover:text-[var(--color-terracotta)] transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="btn-primary">Order Online</a>
+            </div>
+            
+            <button class="lg:hidden text-2xl" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed top-0 right-0 h-full w-full lg:hidden z-40 flex flex-col" style="background-color: var(--bg-primary);">
+        <div class="flex justify-end p-6">
+            <button class="text-3xl" id="closeMobileMenu"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="flex flex-col items-center space-y-8 pt-12">
+            <a href="/" class="text-2xl font-semibold">Home</a>
+            <a href="/about.html" class="text-2xl font-semibold">About</a>
+            <a href="/menu.html" class="text-2xl font-semibold text-[var(--color-terracotta)]">Menu</a>
+            <a href="/events.html" class="text-2xl font-semibold">Events</a>
+            <a href="/shop.html" class="text-2xl font-semibold">Shop</a>
+            <a href="/visit.html" class="text-2xl font-semibold">Visit Us</a>
+            <a href="/contact.html" class="text-2xl font-semibold">Contact</a>
+            <div class="flex items-center space-x-4 pt-8">
+                <div class="theme-toggle" id="mobileThemeToggle"><div class="theme-toggle-circle"></div></div>
+                <a href="https://instagram.com/friendsoffriends.sd" target="_blank" class="text-2xl"><i class="fab fa-instagram"></i></a>
+            </div>
+            <a href="#" class="btn-primary mt-8">Order Online</a>
+        </div>
+    </div>
+    
+    <!-- Hero -->
+    <section class="min-h-[50vh] flex items-center justify-center pt-32 pb-20 px-6" style="background: linear-gradient(135deg, rgba(212, 116, 94, 0.9), rgba(61, 40, 23, 0.85)), url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 800\"><rect fill=\"%23D4745E\" width=\"1200\" height=\"800\"/></svg>'); background-size: cover;">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <p class="text-sm font-bold tracking-widest uppercase mb-4">Our Menu</p>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Flavors of Home</h1>
+            <p class="text-xl md:text-2xl">Specialty coffee, smash burgers & Filipino-inspired bites</p>
+        </div>
+    </section>
+    
+    <!-- Menu Tabs -->
+    <section class="py-16 px-6" style="background-color: var(--bg-primary);">
+        <div class="max-w-7xl mx-auto">
+            <!-- Tab Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12 reveal">
+                <button class="tab-button active" data-tab="coffee">
+                    <i class="fas fa-mug-hot mr-2"></i> Coffee & Drinks
+                </button>
+                <button class="tab-button" data-tab="food">
+                    <i class="fas fa-burger mr-2"></i> Food
+                </button>
+                <button class="tab-button" data-tab="beer-wine">
+                    <i class="fas fa-wine-bottle mr-2"></i> Beer & Wine
+                </button>
+                <button class="tab-button" data-tab="pastries">
+                    <i class="fas fa-cookie-bite mr-2"></i> Pastries
+                </button>
+            </div>
+            
+            <!-- Coffee & Drinks Tab -->
+            <div class="tab-content active" id="coffee">
+                <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">Coffee & Drinks</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Signature Drinks -->
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6" style="color: var(--color-terracotta);">Signature Drinks</h3>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Buko Pandan Latte</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$6.50</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Filipino-inspired latte with coconut and pandan flavors, a taste of home</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Palo Santo</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$5.50</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Signature espresso with aromatic palo santo notes</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Ube Latte</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$6.00</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Creamy purple yam latte, vibrant and delicious</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Horchata Cold Brew</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$5.75</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Sweet cinnamon rice milk meets bold cold brew</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Classic Coffee -->
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6" style="color: var(--color-terracotta);">Classic Coffee</h3>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Espresso</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$3.50</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Single or double shot, perfectly pulled</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Americano</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$4.00</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Classic espresso and hot water</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Cappuccino</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$5.00</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Equal parts espresso, steamed milk, and foam</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Latte</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$5.50</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Smooth espresso with steamed milk</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Pour Over</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$4.50</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Single origin, brewed to perfection</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Cold Brew</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$5.00</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Smooth, less acidic, refreshing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Food Tab -->
+            <div class="tab-content" id="food">
+                <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">Food</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Smash Burgers (Wavy) -->
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6" style="color: var(--color-terracotta);">Smash Burgers</h3>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">The OG</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$12.00</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Double smash patty, American cheese, house sauce, lettuce, pickles, onions</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Bacon Smash</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$13.50</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Double patty, crispy bacon, cheddar, BBQ sauce</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Mushroom Swiss</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$13.00</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Sautéed mushrooms, Swiss cheese, garlic aioli</p>
+                        </div>
+                        
+                        <h3 class="text-3xl font-bold mb-6 mt-8" style="color: var(--color-terracotta);">Sandwiches</h3>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Cheesesteak</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$11.00</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Thinly sliced steak, grilled onions, peppers, provolone</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Breakfast Sando</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$9.00</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Egg, cheese, choice of bacon or sausage on brioche</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Filipino-Inspired & Sides -->
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6" style="color: var(--color-terracotta);">Filipino-Inspired</h3>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Lumpia (5pc)</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$8.00</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Crispy Filipino spring rolls with sweet chili sauce</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Adobo Bowl</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$10.00</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Savory chicken adobo over rice</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Sisig Tacos (2pc)</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$9.50</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Sizzling pork sisig in soft tortillas</p>
+                        </div>
+                        
+                        <h3 class="text-3xl font-bold mb-6 mt-8" style="color: var(--color-terracotta);">Sides</h3>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Tater Tots</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$5.00</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Crispy golden tots with house seasoning</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Garlic Fries</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$6.00</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Fresh-cut fries with garlic butter and herbs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Beer & Wine Tab -->
+            <div class="tab-content" id="beer-wine">
+                <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">Beer & Wine</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Beer -->
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6" style="color: var(--color-terracotta);">Beer on Tap</h3>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Local IPA</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$7.00</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Rotating selection from San Diego breweries</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Lager</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$6.00</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Crisp and refreshing</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Stout</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$7.50</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Rich and dark, perfect with food</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Pale Ale</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$6.50</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Balanced and hoppy</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Wine -->
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6" style="color: var(--color-terracotta);">Wine</h3>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Red - Cabernet</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$8 / $30</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Glass / Bottle</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Red - Pinot Noir</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$9 / $34</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Glass / Bottle</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">White - Chardonnay</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$8 / $30</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Glass / Bottle</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">White - Sauvignon Blanc</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$8 / $30</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Glass / Bottle</p>
+                        </div>
+                        
+                        <div class="menu-item p-6 rounded-xl mb-4" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-2xl font-bold">Rosé</h4>
+                                <span class="text-xl font-bold" style="color: var(--color-terracotta);">$8 / $30</span>
+                            </div>
+                            <p style="color: var(--text-muted);">Glass / Bottle</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pastries Tab -->
+            <div class="tab-content" id="pastries">
+                <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">Pastries & Sweets</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="menu-item p-6 rounded-xl" style="background-color: var(--bg-secondary);">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-2xl font-bold">Croissant</h4>
+                            <span class="text-xl font-bold" style="color: var(--color-terracotta);">$4.50</span>
+                        </div>
+                        <p style="color: var(--text-muted);">Buttery, flaky, classic</p>
+                    </div>
+                    
+                    <div class="menu-item p-6 rounded-xl" style="background-color: var(--bg-secondary);">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-2xl font-bold">Chocolate Croissant</h4>
+                            <span class="text-xl font-bold" style="color: var(--color-terracotta);">$5.00</span>
+                        </div>
+                        <p style="color: var(--text-muted);">Dark chocolate, perfectly baked</p>
+                    </div>
+                    
+                    <div class="menu-item p-6 rounded-xl" style="background-color: var(--bg-secondary);">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-2xl font-bold">Muffin</h4>
+                            <span class="text-xl font-bold" style="color: var(--color-terracotta);">$4.00</span>
+                        </div>
+                        <p style="color: var(--text-muted);">Blueberry or chocolate chip</p>
+                    </div>
+                    
+                    <div class="menu-item p-6 rounded-xl" style="background-color: var(--bg-secondary);">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-2xl font-bold">Cinnamon Roll</h4>
+                            <span class="text-xl font-bold" style="color: var(--color-terracotta);">$5.50</span>
+                        </div>
+                        <p style="color: var(--text-muted);">Warm, gooey, cream cheese frosting</p>
+                    </div>
+                    
+                    <div class="menu-item p-6 rounded-xl" style="background-color: var(--bg-secondary);">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-2xl font-bold">Ube Pan de Sal</h4>
+                            <span class="text-xl font-bold" style="color: var(--color-terracotta);">$3.50</span>
+                        </div>
+                        <p style="color: var(--text-muted);">Filipino bread roll with ube filling</p>
+                    </div>
+                    
+                    <div class="menu-item p-6 rounded-xl" style="background-color: var(--bg-secondary);">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-2xl font-bold">Cookies</h4>
+                            <span class="text-xl font-bold" style="color: var(--color-terracotta);">$3.00</span>
+                        </div>
+                        <p style="color: var(--text-muted);">Rotating flavors, freshly baked</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-24 px-6" style="background: linear-gradient(135deg, var(--color-olive), var(--color-sage)); color: white;">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8">Hungry Yet?</h2>
+            <p class="text-xl mb-12">Order online for pickup or visit us in National City</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#" class="btn-primary text-lg" style="background-color: white; color: var(--color-espresso);">Order Online</a>
+                <a href="/visit.html" class="btn-primary text-lg" style="background-color: transparent; border: 2px solid white;">Visit Us</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-16 px-6" style="background-color: var(--color-espresso); color: white;">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4" style="font-family: 'DM Serif Display', serif;">Friends of Friends</h3>
+                    <p class="mb-4 opacity-90">A warm, nostalgic gathering place in the heart of South Bay San Diego.</p>
+                    <div class="flex gap-4 text-xl">
+                        <a href="https://instagram.com/friendsoffriends.sd" target="_blank" class="hover:text-[var(--color-terracotta)] transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/friendsoffriends.sd" target="_blank" class="hover:text-[var(--color-terracotta)] transition-colors"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Home</a></li>
+                        <li><a href="/about.html" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">About Us</a></li>
+                        <li><a href="/menu.html" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Menu</a></li>
+                        <li><a href="/events.html" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Events</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Explore</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/shop.html" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Shop</a></li>
+                        <li><a href="/visit.html" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Visit Us</a></li>
+                        <li><a href="/contact.html" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Contact</a></li>
+                        <li><a href="#" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Order Online</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Visit Us</h4>
+                    <ul class="space-y-2 opacity-90">
+                        <li>127 E 8th St</li>
+                        <li>National City, CA 91950</li>
+                        <li class="pt-2"><a href="tel:6197966210" class="hover:text-[var(--color-terracotta)] transition-colors">(619) 796-6210</a></li>
+                        <li class="pt-2"><strong>Mon-Thu:</strong> 7am-5pm<br/><strong>Fri-Sun:</strong> 7am-8pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/20 pt-8 text-center">
+                <p class="opacity-75">&copy; 2024 Friends of Friends. All rights reserved. | Southbay All Day ☕🎵</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+        const htmlElement = document.documentElement;
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        htmlElement.setAttribute('data-theme', currentTheme);
+        
+        function toggleTheme() {
+            const newTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+        themeToggle.addEventListener('click', toggleTheme);
+        mobileThemeToggle.addEventListener('click', toggleTheme);
+        
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.add('active'));
+        closeMobileMenu.addEventListener('click', () => mobileMenu.classList.remove('active'));
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.remove('active')));
+        
+        // Nav scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+        
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                button.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Scroll reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) element.classList.add('active');
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+    </script>
+</body>
+</html>

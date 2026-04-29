@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Visit Friends of Friends at 127 E 8th St, National City, CA 91950. Hours, directions, parking info, and what to expect.">
+    <title>Visit Us - Friends of Friends | Location & Hours</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --color-terracotta: #D4745E;
+            --color-olive: #8B9556;
+            --color-espresso: #3D2817;
+            --color-cream: #F5F1E8;
+            --color-sage: #A8B5A0;
+            --bg-primary: #F5F1E8;
+            --bg-secondary: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #3D2817;
+            --text-muted: #6B6B6B;
+        }
+        [data-theme="dark"] {
+            --bg-primary: #1A1A1A;
+            --bg-secondary: #2A2422;
+            --text-primary: #F5F1E8;
+            --text-secondary: #E8E4DC;
+            --text-muted: #A8A8A8;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 { font-family: 'DM Serif Display', serif; }
+        
+        nav {
+            backdrop-filter: blur(10px);
+            background-color: rgba(245, 241, 232, 0.95);
+            transition: all 0.3s ease;
+        }
+        [data-theme="dark"] nav { background-color: rgba(26, 26, 26, 0.95); }
+        nav.scrolled { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
+        
+        .btn-primary {
+            background-color: var(--color-terracotta);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            background-color: var(--color-espresso);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 116, 94, 0.3);
+        }
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active { transform: translateX(0); }
+        
+        .theme-toggle {
+            cursor: pointer;
+            width: 50px;
+            height: 26px;
+            background-color: var(--color-terracotta);
+            border-radius: 100px;
+            position: relative;
+        }
+        .theme-toggle-circle {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        [data-theme="dark"] .theme-toggle-circle { transform: translateX(24px); }
+        
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.3"/></svg>');
+            z-index: 9999;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .info-card {
+            transition: all 0.3s ease;
+        }
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="grain-overlay"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="/" class="flex items-center space-x-2 text-2xl font-bold">
+                <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="20" cy="20" r="8" fill="currentColor"/>
+                    <circle cx="20" cy="20" r="4" fill="var(--bg-primary)"/>
+                </svg>
+                <span style="font-family: 'DM Serif Display', serif;">Friends of Friends</span>
+            </a>
+            
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="/" class="font-medium hover:text-[var(--color-terracotta)] transition-colors">Home</a>
+                <a href="/about.html" class="font-medium hover:text-[var(--color-terracotta)] transition-colors">About</a>
+                <a href="/menu.html" class="font-medium hover:text-[var(--color-terracotta)] transition-colors">Menu</a>
+                <a href="/events.html" class="font-medium hover:text-[var(--color-terracotta)] transition-colors">Events</a>
+                <a href="/shop.html" class="font-medium hover:text-[var(--color-terracotta)] transition-colors">Shop</a>
+                <a href="/visit.html" class="font-medium text-[var(--color-terracotta)]">Visit Us</a>
+                <a href="/contact.html" class="font-medium hover:text-[var(--color-terracotta)] transition-colors">Contact</a>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-4">
+                <div class="theme-toggle" id="themeToggle"><div class="theme-toggle-circle"></div></div>
+                <a href="https://instagram.com/friendsoffriends.sd" target="_blank" class="text-xl hover:text-[var(--color-terracotta)] transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="btn-primary">Order Online</a>
+            </div>
+            
+            <button class="lg:hidden text-2xl" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed top-0 right-0 h-full w-full lg:hidden z-40 flex flex-col" style="background-color: var(--bg-primary);">
+        <div class="flex justify-end p-6">
+            <button class="text-3xl" id="closeMobileMenu"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="flex flex-col items-center space-y-8 pt-12">
+            <a href="/" class="text-2xl font-semibold">Home</a>
+            <a href="/about.html" class="text-2xl font-semibold">About</a>
+            <a href="/menu.html" class="text-2xl font-semibold">Menu</a>
+            <a href="/events.html" class="text-2xl font-semibold">Events</a>
+            <a href="/shop.html" class="text-2xl font-semibold">Shop</a>
+            <a href="/visit.html" class="text-2xl font-semibold text-[var(--color-terracotta)]">Visit Us</a>
+            <a href="/contact.html" class="text-2xl font-semibold">Contact</a>
+            <div class="flex items-center space-x-4 pt-8">
+                <div class="theme-toggle" id="mobileThemeToggle"><div class="theme-toggle-circle"></div></div>
+                <a href="https://instagram.com/friendsoffriends.sd" target="_blank" class="text-2xl"><i class="fab fa-instagram"></i></a>
+            </div>
+            <a href="#" class="btn-primary mt-8">Order Online</a>
+        </div>
+    </div>
+    
+    <!-- Hero -->
+    <section class="min-h-[50vh] flex items-center justify-center pt-32 pb-20 px-6" style="background: linear-gradient(135deg, rgba(212, 116, 94, 0.9), rgba(139, 149, 86, 0.85)), url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 800\"><rect fill=\"%23D4745E\" width=\"1200\" height=\"800\"/></svg>'); background-size: cover;">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <p class="text-sm font-bold tracking-widest uppercase mb-4">Visit Us</p>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Come Say Hi</h1>
+            <p class="text-xl md:text-2xl">We're in the heart of National City, South Bay</p>
+        </div>
+    </section>
+    
+    <!-- Location & Map -->
+    <section class="py-24 px-6" style="background-color: var(--bg-primary);">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Map -->
+                <div class="reveal">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8">Find Us</h2>
+                    <div class="rounded-2xl overflow-hidden shadow-2xl mb-6">
+                        <!-- Google Maps Embed - Replace with actual embed code -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3357.0!2d-117.0994!3d32.6785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDQwJzQyLjYiTiAxMTfCsDA1JzU3LjgiVw!5e0!3m2!1sen!2sus!4v1234567890" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="space-y-4 text-lg">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-map-marker-alt text-2xl mt-1" style="color: var(--color-terracotta);"></i>
+                            <div>
+                                <p class="font-bold">Address</p>
+                                <p style="color: var(--text-muted);">127 E 8th St<br/>National City, CA 91950</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-phone text-2xl mt-1" style="color: var(--color-terracotta);"></i>
+                            <div>
+                                <p class="font-bold">Phone</p>
+                                <a href="tel:6197966210" class="hover:text-[var(--color-terracotta)] transition-colors" style="color: var(--text-muted);">(619) 796-6210</a>
+                            </div>
+                        </div>
+                        <a href="https://www.google.com/maps/dir//127+E+8th+St,+National+City,+CA+91950" target="_blank" class="btn-primary mt-6">
+                            <i class="fas fa-directions mr-2"></i>Get Directions
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Hours & Info -->
+                <div class="reveal">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8">Hours</h2>
+                    <div class="space-y-6 mb-12">
+                        <div class="p-6 rounded-xl" style="background-color: var(--bg-secondary);">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-xl font-bold">Monday</span>
+                                <span class="text-lg" style="color: var(--text-muted);">7:00 AM - 5:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-xl font-bold">Tuesday</span>
+                                <span class="text-lg" style="color: var(--text-muted);">7:00 AM - 5:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-xl font-bold">Wednesday</span>
+                                <span class="text-lg" style="color: var(--text-muted);">7:00 AM - 5:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-xl font-bold">Thursday</span>
+                                <span class="text-lg" style="color: var(--text-muted);">7:00 AM - 5:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-3 pb-3 border-b" style="border-color: var(--bg-primary);">
+                                <span class="text-xl font-bold">Friday</span>
+                                <span class="text-lg font-bold" style="color: var(--color-terracotta);">7:00 AM - 8:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-xl font-bold">Saturday</span>
+                                <span class="text-lg font-bold" style="color: var(--color-terracotta);">7:00 AM - 8:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-bold">Sunday</span>
+                                <span class="text-lg font-bold" style="color: var(--color-terracotta);">7:00 AM - 8:00 PM</span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6 rounded-xl" style="background: linear-gradient(135deg, var(--color-olive), var(--color-sage)); color: white;">
+                            <p class="text-lg mb-2"><strong>Extended Hours on Weekends!</strong></p>
+                            <p>Join us Fridays, Saturdays, and Sundays until 8:00 PM for evening vibes, food, drinks, and community.</p>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="btn-primary">Order Online for Pickup</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Parking & Getting Here -->
+    <section class="py-24 px-6" style="background-color: var(--bg-secondary);">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Getting Here</h2>
+                <p class="text-xl" style="color: var(--text-muted);">Everything you need to know before your visit</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Parking -->
+                <div class="info-card p-8 rounded-2xl reveal" style="background-color: var(--bg-primary);">
+                    <div class="text-5xl mb-6" style="color: var(--color-terracotta);">
+                        <i class="fas fa-parking"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Parking</h3>
+                    <p class="text-lg leading-relaxed" style="color: var(--text-muted);">
+                        Street parking available on 8th St and surrounding streets. Additional lot parking nearby. Please check signs for time limits.
+                    </p>
+                </div>
+                
+                <!-- Public Transit -->
+                <div class="info-card p-8 rounded-2xl reveal" style="background-color: var(--bg-primary);">
+                    <div class="text-5xl mb-6" style="color: var(--color-olive);">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Public Transit</h3>
+                    <p class="text-lg leading-relaxed" style="color: var(--text-muted);">
+                        Accessible via MTS bus routes. Check the MTS website for schedules and route planning. We're walkable from several major stops.
+                    </p>
+                </div>
+                
+                <!-- Bike Friendly -->
+                <div class="info-card p-8 rounded-2xl reveal" style="background-color: var(--bg-primary);">
+                    <div class="text-5xl mb-6" style="color: var(--color-sage);">
+                        <i class="fas fa-bicycle"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Bike Friendly</h3>
+                    <p class="text-lg leading-relaxed" style="color: var(--text-muted);">
+                        Bike racks available out front. South Bay's getting more bike-friendly every day. Ride over and enjoy the journey!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- What to Expect -->
+    <section class="py-24 px-6" style="background-color: var(--bg-primary);">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl" style="background: linear-gradient(135deg, var(--color-terracotta), var(--color-espresso)); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: white;">
+                        <div class="text-center p-8">
+                            <i class="fas fa-store text-6xl mb-4 opacity-70"></i>
+                            <p class="text-sm">PHOTO: Welcoming storefront exterior - warm lighting, outdoor seating, inviting entrance, 8th St view</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8">What to Expect</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="text-3xl mt-1" style="color: var(--color-terracotta);">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Warm, Welcoming Space</h4>
+                                <p class="text-lg" style="color: var(--text-muted);">
+                                    Come as you are. Whether you're here for a quick coffee or staying all afternoon, you're home.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="text-3xl mt-1" style="color: var(--color-olive);">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Indoor & Outdoor Seating</h4>
+                                <p class="text-lg" style="color: var(--text-muted);">
+                                    Cozy indoor space with vinyl listening area, plus outdoor seating for those perfect San Diego days.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="text-3xl mt-1" style="color: var(--color-sage);">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Community Vibes</h4>
+                                <p class="text-lg" style="color: var(--text-muted);">
+                                    You'll likely meet a neighbor, make a new friend, or reconnect with an old one. That's the magic of FoF.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="text-3xl mt-1" style="color: var(--color-terracotta);">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Family Friendly</h4>
+                                <p class="text-lg" style="color: var(--text-muted);">
+                                    Kids welcome! We're a gathering place for the whole family and community.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="py-24 px-6" style="background: linear-gradient(135deg, var(--color-terracotta), var(--color-olive)); color: white;">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8">See You Soon!</h2>
+            <p class="text-xl md:text-2xl mb-12">Can't wait to welcome you to our space. First time? Ask for Marco, Brandon, or Aaron — they'd love to meet you.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/menu.html" class="btn-primary text-lg" style="background-color: white; color: var(--color-espresso);">
+                    View Menu
+                </a>
+                <a href="/contact.html" class="btn-primary text-lg" style="background-color: transparent; border: 2px solid white;">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-16 px-6" style="background-color: var(--color-espresso); color: white;">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4" style="font-family: 'DM Serif Display', serif;">Friends of Friends</h3>
+                    <p class="mb-4 opacity-90">A warm, nostalgic gathering place in the heart of South Bay San Diego.</p>
+                    <div class="flex gap-4 text-xl">
+                        <a href="https://instagram.com/friendsoffriends.sd" target="_blank" class="hover:text-[var(--color-terracotta)] transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/friendsoffriends.sd" target="_blank" class="hover:text-[var(--color-terracotta)] transition-colors"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Home</a></li>
+                        <li><a href="/about.html" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">About Us</a></li>
+                        <li><a href="/menu.html" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Menu</a></li>
+                        <li><a href="/events.html" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Events</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Explore</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/shop.html" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Shop</a></li>
+                        <li><a href="/visit.html" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Visit Us</a></li>
+                        <li><a href="/contact.html" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Contact</a></li>
+                        <li><a href="#" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Order Online</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Visit Us</h4>
+                    <ul class="space-y-2 opacity-90">
+                        <li>127 E 8th St</li>
+                        <li>National City, CA 91950</li>
+                        <li class="pt-2"><a href="tel:6197966210" class="hover:text-[var(--color-terracotta)] transition-colors">(619) 796-6210</a></li>
+                        <li class="pt-2"><strong>Mon-Thu:</strong> 7am-5pm<br/><strong>Fri-Sun:</strong> 7am-8pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/20 pt-8 text-center">
+                <p class="opacity-75">&copy; 2024 Friends of Friends. All rights reserved. | Southbay All Day ☕🎵</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+        const htmlElement = document.documentElement;
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        htmlElement.setAttribute('data-theme', currentTheme);
+        
+        function toggleTheme() {
+            const newTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+        themeToggle.addEventListener('click', toggleTheme);
+        mobileThemeToggle.addEventListener('click', toggleTheme);
+        
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.add('active'));
+        closeMobileMenu.addEventListener('click', () => mobileMenu.classList.remove('active'));
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.remove('active')));
+        
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+        
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) element.classList.add('active');
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+    </script>
+</body>
+</html>
