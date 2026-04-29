@@ -1,83 +1,91 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="T. Fankhauser GmbH – Professionelle Beschichtungstechnik in Wittenbach SG. Pulverbeschichtung, Nasslackierung und Spezialbeschichtungen für höchste Ansprüche. 100% Termintreue.">
-    <meta name="keywords" content="Pulverbeschichtung, Nasslackierung, Beschichtung Schweiz, Korrosionsschutz, Spezialbeschichtungen, Wittenbach, St. Gallen">
-    <meta name="author" content="T. Fankhauser GmbH">
+    <meta name="description" content="Friends of Friends - A vibrant community coffee shop, vinyl listening bar, and all-day restaurant in National City, South Bay San Diego. Specialty coffee, smash burgers, and record exchange events.">
+    <meta name="keywords" content="coffee shop, vinyl bar, National City, San Diego, specialty coffee, smash burgers, community cafe, record exchange">
     
-    <!-- Open Graph -->
-    <meta property="og:title" content="T. Fankhauser GmbH – Beschichtungstechnik">
-    <meta property="og:description" content="Ihr Partner für professionelle Beschichtungslösungen in der Schweiz. Höchste Qualität, maximale Flexibilität, 100% Termintreue.">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Friends of Friends - Southbay All Day">
+    <meta property="og:description" content="Community coffee shop, vinyl listening bar & restaurant in National City. Serving specialty coffee, smash burgers & Filipino-inspired food.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://friendsoffriendssd.com">
+    <meta property="og:image" content="https://friendsoffriendssd.com/og-image.jpg">
     
-    <title>T. Fankhauser GmbH – Beschichtungstechnik | Pulverbeschichtung & Nasslackierung</title>
+    <title>Friends of Friends - Southbay All Day | Coffee, Vinyl & Community</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts - Premium Swiss Industrial Typography -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        :root {
+            /* Light Mode Colors */
+            --color-terracotta: #D4745E;
+            --color-olive: #8B9556;
+            --color-espresso: #3D2817;
+            --color-cream: #F5F1E8;
+            --color-sage: #A8B5A0;
+            --color-black: #1A1A1A;
+            --color-white: #FFFFFF;
+            --color-accent: #D4745E;
+            
+            /* Backgrounds */
+            --bg-primary: #F5F1E8;
+            --bg-secondary: #FFFFFF;
+            --bg-tertiary: #E8E4DC;
+            --text-primary: #1A1A1A;
+            --text-secondary: #3D2817;
+            --text-muted: #6B6B6B;
+        }
+        
+        [data-theme="dark"] {
+            /* Dark Mode Colors - Warm Dark */
+            --bg-primary: #1A1A1A;
+            --bg-secondary: #2A2422;
+            --bg-tertiary: #3D2817;
+            --text-primary: #F5F1E8;
+            --text-secondary: #E8E4DC;
+            --text-muted: #A8A8A8;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        :root {
-            /* Premium Color Palette - Swiss Industrial */
-            --primary-blue: #0A2463;
-            --deep-navy: #0D1B2A;
-            --steel-blue: #1B4965;
-            --accent-blue: #3E92CC;
-            --light-blue: #CAE9FF;
-            
-            --eco-green: #2D6A4F;
-            --accent-green: #52B788;
-            --light-green: #95D5B2;
-            
-            --anthracite: #2B2D42;
-            --medium-gray: #8D99AE;
-            --light-gray: #EDF2F4;
-            --off-white: #F8F9FA;
-            
-            --accent-orange: #FB5607;
-            --white: #FFFFFF;
-            
-            /* Typography */
-            --font-display: 'Outfit', sans-serif;
-            --font-body: 'DM Sans', sans-serif;
-            
-            /* Spacing */
-            --section-padding: 7rem;
-            --section-padding-mobile: 4rem;
-        }
-
+        
         body {
-            font-family: var(--font-body);
-            color: var(--anthracite);
-            background-color: var(--off-white);
-            line-height: 1.7;
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
             overflow-x: hidden;
         }
-
+        
         h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-display);
-            font-weight: 700;
-            line-height: 1.2;
+            font-family: 'DM Serif Display', serif;
         }
-
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
+        
+        /* Hero Parallax Effect */
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(61, 40, 23, 0.85), rgba(212, 116, 94, 0.75)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%233D2817" width="1200" height="800"/><g fill="%23D4745E" opacity="0.1"><circle cx="200" cy="300" r="100"/><circle cx="800" cy="500" r="150"/><circle cx="1000" cy="200" r="80"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
         }
-
-        /* Custom Animations */
+        
+        /* Smooth Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -88,1539 +96,863 @@
                 transform: translateY(0);
             }
         }
-
+        
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
+        
         @keyframes slideInLeft {
             from {
                 opacity: 0;
-                transform: translateX(-50px);
+                transform: translateX(-30px);
             }
             to {
                 opacity: 1;
                 transform: translateX(0);
             }
         }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .animate-fade-in-up {
+        
+        .fade-in-up {
             animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
         }
-
-        .animate-fade-in {
+        
+        .fade-in {
             animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
         }
-
-        .animate-slide-in-left {
+        
+        .slide-in-left {
             animation: slideInLeft 0.8s ease-out forwards;
+            opacity: 0;
         }
-
-        .animate-slide-in-right {
-            animation: slideInRight 0.8s ease-out forwards;
-        }
-
-        .animate-scale-in {
-            animation: scaleIn 0.6s ease-out forwards;
-        }
-
-        /* Delay classes */
+        
+        /* Staggered Animation Delays */
         .delay-100 { animation-delay: 0.1s; }
         .delay-200 { animation-delay: 0.2s; }
         .delay-300 { animation-delay: 0.3s; }
         .delay-400 { animation-delay: 0.4s; }
         .delay-500 { animation-delay: 0.5s; }
         .delay-600 { animation-delay: 0.6s; }
-
-        /* Initially hidden for animation */
-        .fade-in-up, .fade-in, .slide-in-left, .slide-in-right, .scale-in {
-            opacity: 0;
-        }
-
-        /* Gradient Backgrounds */
-        .gradient-hero {
-            background: linear-gradient(135deg, var(--deep-navy) 0%, var(--primary-blue) 50%, var(--steel-blue) 100%);
-        }
-
-        .gradient-overlay {
-            background: linear-gradient(to right, rgba(10, 36, 99, 0.95), rgba(10, 36, 99, 0.7));
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Premium Card Styles */
-        .premium-card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(0, 0, 0, 0.04);
-        }
-
-        .premium-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        /* CTA Buttons */
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-blue), var(--steel-blue));
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-family: var(--font-display);
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 16px rgba(62, 146, 204, 0.3);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(62, 146, 204, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary-blue);
-            padding: 1rem 2.5rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-family: var(--font-display);
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            border: 2px solid var(--primary-blue);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-blue);
-            color: white;
-        }
-
+        .delay-700 { animation-delay: 0.7s; }
+        .delay-800 { animation-delay: 0.8s; }
+        
         /* Navigation Styles */
-        .nav-sticky {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
+        nav {
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            background-color: rgba(245, 241, 232, 0.95);
             transition: all 0.3s ease;
         }
-
-        .nav-link {
-            color: var(--anthracite);
+        
+        [data-theme="dark"] nav {
+            background-color: rgba(26, 26, 26, 0.95);
+        }
+        
+        nav.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Button Styles */
+        .btn-primary {
+            background-color: var(--color-terracotta);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
             text-decoration: none;
-            font-weight: 500;
-            font-family: var(--font-display);
-            padding: 0.5rem 1rem;
-            transition: color 0.3s ease;
-            position: relative;
         }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 1rem;
-            right: 1rem;
-            height: 2px;
-            background: var(--accent-blue);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
+        
+        .btn-primary:hover {
+            background-color: var(--color-espresso);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 116, 94, 0.3);
         }
-
-        .nav-link:hover::after {
-            transform: scaleX(1);
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-primary);
+            padding: 1rem 2rem;
+            border: 2px solid var(--text-primary);
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
         }
-
-        .nav-link:hover {
-            color: var(--accent-blue);
+        
+        .btn-secondary:hover {
+            background-color: var(--text-primary);
+            color: var(--bg-primary);
         }
-
-        /* Mobile Menu */
+        
+        /* Mobile Menu Animation */
         .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--deep-navy);
-            z-index: 999;
-            padding: 6rem 2rem 2rem;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
         }
-
+        
         .mobile-menu.active {
-            display: flex;
-            flex-direction: column;
-            animation: fadeIn 0.3s ease-out;
+            transform: translateX(0);
         }
-
-        .mobile-nav-link {
-            color: white;
-            text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: 600;
-            font-family: var(--font-display);
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Section Dividers */
-        .section-divider {
-            height: 4px;
-            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
-            margin: 4rem auto;
-            max-width: 200px;
-        }
-
-        /* Stats Counter */
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 800;
-            font-family: var(--font-display);
-            line-height: 1;
-        }
-
-        /* Service Cards with Icons */
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--accent-blue), var(--steel-blue));
-            color: white;
-        }
-
-        /* Project Gallery */
-        .project-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            aspect-ratio: 4/3;
-            background: var(--medium-gray);
-        }
-
-        .project-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(10, 36, 99, 0.9), transparent);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 2rem;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .project-card:hover .project-overlay {
-            opacity: 1;
-        }
-
-        /* Trust Badges */
-        .trust-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background: white;
-            border-radius: 50px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-            font-weight: 600;
-            color: var(--primary-blue);
-        }
-
-        /* Review Stars */
-        .star-rating {
-            color: #FFB800;
-            font-size: 1.25rem;
-        }
-
-        /* Form Styles */
-        .form-input {
-            width: 100%;
-            padding: 1rem 1.25rem;
-            border: 2px solid var(--light-gray);
-            border-radius: 8px;
-            font-family: var(--font-body);
-            font-size: 1rem;
+        
+        /* Card Hover Effects */
+        .card {
             transition: all 0.3s ease;
-            background: white;
         }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 0 3px rgba(62, 146, 204, 0.1);
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
-
-        textarea.form-input {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        /* Timeline */
-        .timeline-item {
-            position: relative;
-            padding-left: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: var(--accent-blue);
-            border: 3px solid white;
-            box-shadow: 0 0 0 2px var(--accent-blue);
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            left: 7px;
-            top: 16px;
-            bottom: -2rem;
-            width: 2px;
-            background: var(--light-gray);
-        }
-
-        .timeline-item:last-child::after {
-            display: none;
-        }
-
-        /* Responsive Video Container */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 12px;
-        }
-
-        .video-container iframe {
-            position: absolute;
+        
+        /* Grain Texture Overlay */
+        .grain-overlay {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.3"/></svg>');
+            z-index: 9999;
         }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--accent-blue);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
+        
+        /* Parallax Sections */
+        .parallax-section {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        /* Instagram Grid */
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        /* Newsletter Form */
+        .newsletter-input {
+            background-color: var(--bg-secondary);
+            border: 2px solid var(--color-terracotta);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            color: var(--text-primary);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 16px rgba(62, 146, 204, 0.4);
-            z-index: 900;
         }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
+        
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--color-espresso);
+            box-shadow: 0 0 0 3px rgba(212, 116, 94, 0.1);
         }
-
-        .back-to-top:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(62, 146, 204, 0.5);
+        
+        /* Theme Toggle */
+        .theme-toggle {
+            cursor: pointer;
+            width: 50px;
+            height: 26px;
+            background-color: var(--color-terracotta);
+            border-radius: 100px;
+            position: relative;
+            transition: background-color 0.3s ease;
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            :root {
-                --section-padding: var(--section-padding-mobile);
-            }
-
-            .stat-number {
-                font-size: 2.5rem;
-            }
-
-            .service-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 2rem;
-            }
-        }
-
-        /* Loading State */
-        .loading {
-            display: inline-block;
+        
+        .theme-toggle-circle {
+            position: absolute;
+            top: 3px;
+            left: 3px;
             width: 20px;
             height: 20px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
+            background-color: white;
             border-radius: 50%;
-            border-top-color: white;
-            animation: spin 1s linear infinite;
+            transition: transform 0.3s ease;
         }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        
+        [data-theme="dark"] .theme-toggle-circle {
+            transform: translateX(24px);
         }
-
-        /* Success Message */
-        .success-message {
-            background: var(--eco-green);
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            margin-top: 1rem;
-            display: none;
+        
+        /* Smooth Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
         }
-
-        .success-message.show {
-            display: block;
-            animation: fadeInUp 0.5s ease-out;
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <!-- Header / Navigation -->
-    <header class="nav-sticky" id="header">
-        <nav class="max-w-7xl mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <!-- Logo -->
-                <a href="#home" class="flex items-center gap-3">
-                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
-                        <span class="text-white font-bold text-xl">TF</span>
-                    </div>
-                    <div class="hidden md:block">
-                        <div class="font-bold text-lg" style="font-family: var(--font-display); color: var(--primary-blue);">T. Fankhauser GmbH</div>
-                        <div class="text-xs text-gray-600">Beschichtungstechnik</div>
-                    </div>
-                </a>
-
-                <!-- Desktop Navigation -->
-                <div class="hidden lg:flex items-center gap-8">
-                    <a href="#home" class="nav-link">Home</a>
-                    <a href="#ueber-uns" class="nav-link">Über uns</a>
-                    <a href="#leistungen" class="nav-link">Leistungen</a>
-                    <a href="#referenzen" class="nav-link">Referenzen</a>
-                    <a href="#oekologie" class="nav-link">Ökologie</a>
-                    <a href="#qualitaet" class="nav-link">Qualität</a>
-                    <a href="#kontakt" class="btn-primary" style="padding: 0.75rem 1.75rem;">Kontakt</a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button class="lg:hidden" id="mobile-menu-btn" aria-label="Menu">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobile-menu">
-        <button class="absolute top-6 right-6 text-white text-3xl" id="mobile-menu-close">&times;</button>
-        <a href="#home" class="mobile-nav-link">Home</a>
-        <a href="#ueber-uns" class="mobile-nav-link">Über uns</a>
-        <a href="#leistungen" class="mobile-nav-link">Leistungen</a>
-        <a href="#referenzen" class="mobile-nav-link">Referenzen</a>
-        <a href="#oekologie" class="mobile-nav-link">Ökologie</a>
-        <a href="#qualitaet" class="mobile-nav-link">Qualität</a>
-        <a href="#kontakt" class="mobile-nav-link">Kontakt</a>
-    </div>
-
-    <!-- Hero Section -->
-    <section id="home" class="gradient-hero min-h-screen flex items-center relative overflow-hidden" style="padding-top: 80px;">
-        <!-- Decorative Elements -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-20 right-10 w-96 h-96 bg-teal-400 rounded-full blur-3xl"></div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-6 py-20 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Left Content -->
-                <div class="text-white fade-in-up">
-                    <div class="inline-block mb-4">
-                        <span class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold">Seit 1997 in der Schweiz</span>
-                    </div>
-                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                        Höchste Qualität in der <span class="gradient-text" style="background: linear-gradient(135deg, #CAE9FF, #52B788); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Beschichtungstechnik</span>
-                    </h1>
-                    <p class="text-xl mb-8 text-blue-100 leading-relaxed">
-                        Ihr zuverlässiger Partner für Pulverbeschichtung, Nasslackierung und Spezialbeschichtungen. Maximale Flexibilität, höchste Präzision und 100% Termintreue für Ihre Projekte.
-                    </p>
-                    <div class="flex flex-wrap gap-4 mb-8">
-                        <a href="#kontakt" class="btn-primary bg-white text-blue-900 hover:bg-blue-50">
-                            Offerte anfragen
-                        </a>
-                        <a href="#leistungen" class="btn-secondary border-white text-white hover:bg-white hover:text-blue-900">
-                            Unsere Leistungen
-                        </a>
-                    </div>
-
-                    <!-- Trust Badges -->
-                    <div class="flex flex-wrap gap-4">
-                        <div class="trust-badge">
-                            <span class="text-2xl">✓</span>
-                            <span>100% Termintreue</span>
-                        </div>
-                        <div class="trust-badge">
-                            <span class="text-2xl">🇨🇭</span>
-                            <span>Swiss Quality</span>
-                        </div>
-                        <div class="trust-badge">
-                            <span class="text-2xl">🌱</span>
-                            <span>Umweltbewusst</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Content - Stats -->
-                <div class="grid grid-cols-2 gap-6 fade-in-up delay-200">
-                    <div class="premium-card p-6 text-center">
-                        <div class="stat-number gradient-text">25+</div>
-                        <div class="text-gray-600 font-semibold mt-2">Jahre Erfahrung</div>
-                    </div>
-                    <div class="premium-card p-6 text-center">
-                        <div class="stat-number gradient-text">7.2m</div>
-                        <div class="text-gray-600 font-semibold mt-2">Max. Teillänge</div>
-                    </div>
-                    <div class="premium-card p-6 text-center">
-                        <div class="stat-number gradient-text">100%</div>
-                        <div class="text-gray-600 font-semibold mt-2">Termintreue</div>
-                    </div>
-                    <div class="premium-card p-6 text-center">
-                        <div class="stat-number gradient-text">500+</div>
-                        <div class="text-gray-600 font-semibold mt-2">Zufriedene Kunden</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-            <a href="#ueber-uns" class="text-white opacity-75 hover:opacity-100 transition-opacity">
-                <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    <!-- Grain Texture Overlay -->
+    <div class="grain-overlay"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <a href="/" class="flex items-center space-x-2 text-2xl font-bold">
+                <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="20" cy="20" r="8" fill="currentColor"/>
+                    <circle cx="20" cy="20" r="4" fill="var(--bg-primary)"/>
                 </svg>
+                <span style="font-family: 'DM Serif Display', serif; color: var(--text-primary);">Friends of Friends</span>
             </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="/" class="font-medium hover:text-[var(--color-terracotta)] transition-colors">Home</a>
+                <a href="/about.html" class="font-medium hover:text-[var(--color-terracotta)] transition-colors">About</a>
+                <a href="/menu.html" class="font-medium hover:text-[var(--color-terracotta)] transition-colors">Menu</a>
+                <a href="/events.html" class="font-medium hover:text-[var(--color-terracotta)] transition-colors">Events</a>
+                <a href="/shop.html" class="font-medium hover:text-[var(--color-terracotta)] transition-colors">Shop</a>
+                <a href="/visit.html" class="font-medium hover:text-[var(--color-terracotta)] transition-colors">Visit Us</a>
+                <a href="/contact.html" class="font-medium hover:text-[var(--color-terracotta)] transition-colors">Contact</a>
+            </div>
+            
+            <!-- Right Side Icons & CTA -->
+            <div class="hidden lg:flex items-center space-x-4">
+                <div class="theme-toggle" id="themeToggle">
+                    <div class="theme-toggle-circle"></div>
+                </div>
+                <a href="https://instagram.com/friendsoffriends.sd" target="_blank" class="text-xl hover:text-[var(--color-terracotta)] transition-colors">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="btn-primary">Order Online</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden text-2xl" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-    </section>
-
-    <!-- Über uns Section -->
-    <section id="ueber-uns" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-4" style="color: var(--primary-blue);">Über uns</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Seit mehr als 25 Jahren Ihr verlässlicher Partner für professionelle Beschichtungslösungen
-                </p>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-                <div class="fade-in-left">
-                    <h3 class="text-3xl font-bold mb-6" style="color: var(--primary-blue);">Tradition trifft Innovation</h3>
-                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">
-                        Die T. Fankhauser GmbH wurde um 1997 von Thomas Fankhauser in Wittenbach, St. Gallen gegründet und hat sich seither zu einem führenden Spezialisten für hochwertige Beschichtungstechnik in der Schweiz entwickelt.
-                    </p>
-                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">
-                        Unser Erfolgsrezept basiert auf drei Säulen: <strong>höchste Qualität</strong>, <strong>maximale Flexibilität</strong> und <strong>absolute Termintreue</strong>. Mit modernster Technologie und einem erfahrenen Team realisieren wir anspruchsvolle Beschichtungsprojekte für Kunden aus dem gesamten DACH-Raum.
-                    </p>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        Ob Metallbau, Maschinenbau, Architektur, Fassadenbau oder Medizinaltechnik – wir bieten massgeschneiderte Lösungen für Ihre individuellen Anforderungen.
-                    </p>
-                </div>
-
-                <div class="fade-in-right">
-                    <div class="bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-2xl">
-                        <h4 class="text-2xl font-bold mb-6" style="color: var(--primary-blue);">Unsere Werte</h4>
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background: var(--accent-blue); color: white;">✓</div>
-                                <div>
-                                    <div class="font-semibold text-lg">Qualität ohne Kompromisse</div>
-                                    <div class="text-gray-600">Höchste Standards in jedem Arbeitsschritt</div>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background: var(--accent-blue); color: white;">✓</div>
-                                <div>
-                                    <div class="font-semibold text-lg">Zuverlässigkeit</div>
-                                    <div class="text-gray-600">100% Termintreue bei allen Projekten</div>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background: var(--accent-blue); color: white;">✓</div>
-                                <div>
-                                    <div class="font-semibold text-lg">Umweltverantwortung</div>
-                                    <div class="text-gray-600">Nachhaltige Verfahren und Ressourcenschonung</div>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background: var(--accent-blue); color: white;">✓</div>
-                                <div>
-                                    <div class="font-semibold text-lg">Innovation</div>
-                                    <div class="text-gray-600">Modernste Technologie und kontinuierliche Weiterentwicklung</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Timeline -->
-            <div class="max-w-4xl mx-auto">
-                <h3 class="text-3xl font-bold text-center mb-12" style="color: var(--primary-blue);">Unsere Geschichte</h3>
-                <div class="space-y-0">
-                    <div class="timeline-item">
-                        <div class="font-bold text-xl mb-1" style="color: var(--primary-blue);">~1997</div>
-                        <div class="font-semibold text-lg mb-2">Gründung</div>
-                        <div class="text-gray-600">Thomas Fankhauser gründet die Firma in Wittenbach SG mit dem Fokus auf hochwertige Pulverbeschichtung</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="font-bold text-xl mb-1" style="color: var(--primary-blue);">2000er</div>
-                        <div class="font-semibold text-lg mb-2">Expansion</div>
-                        <div class="text-gray-600">Erweiterung des Leistungsportfolios um Nasslackierung und erste Spezialbeschichtungen</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="font-bold text-xl mb-1" style="color: var(--primary-blue);">2010er</div>
-                        <div class="font-semibold text-lg mb-2">Technologieführerschaft</div>
-                        <div class="text-gray-600">Investitionen in modernste Anlagentechnik und Entwicklung innovativer Beschichtungssysteme</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="font-bold text-xl mb-1" style="color: var(--primary-blue);">Heute</div>
-                        <div class="font-semibold text-lg mb-2">Marktführer in der Region</div>
-                        <div class="text-gray-600">Anerkannter Spezialist für anspruchsvolle Beschichtungslösungen mit überregionaler Kundenbase</div>
-                    </div>
-                </div>
-            </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed top-0 right-0 h-full w-full lg:hidden z-40 flex flex-col" style="background-color: var(--bg-primary);">
+        <div class="flex justify-end p-6">
+            <button class="text-3xl" id="closeMobileMenu">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
-    </section>
-
-    <!-- Leistungen Section -->
-    <section id="leistungen" class="py-24" style="background: linear-gradient(to bottom, var(--off-white), white);">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-4" style="color: var(--primary-blue);">Unsere Leistungen</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Umfassendes Beschichtungsportfolio für höchste Ansprüche – von der Vorbehandlung bis zur finalen Spezialveredelung
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                <!-- Service 1: Pulverbeschichtung -->
-                <div class="premium-card p-8 fade-in-up">
-                    <div class="service-icon">
-                        <span>⚡</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3" style="color: var(--primary-blue);">Pulverbeschichtung</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Elektrostatische Pulverbeschichtung für höchste Oberflächengüte und Haltbarkeit. Ideal für Metallteile aller Art mit hervorragenden mechanischen und optischen Eigenschaften.
-                    </p>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Hochglanz, Matt, Feinstruktur</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Alle RAL- und Sonderfarben</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Umweltfreundlich, lösemittelfrei</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Sehr gute Korrosionsbeständigkeit</span>
-                        </li>
-                    </ul>
+        <div class="flex flex-col items-center space-y-8 pt-12">
+            <a href="/" class="text-2xl font-semibold hover:text-[var(--color-terracotta)] transition-colors">Home</a>
+            <a href="/about.html" class="text-2xl font-semibold hover:text-[var(--color-terracotta)] transition-colors">About</a>
+            <a href="/menu.html" class="text-2xl font-semibold hover:text-[var(--color-terracotta)] transition-colors">Menu</a>
+            <a href="/events.html" class="text-2xl font-semibold hover:text-[var(--color-terracotta)] transition-colors">Events</a>
+            <a href="/shop.html" class="text-2xl font-semibold hover:text-[var(--color-terracotta)] transition-colors">Shop</a>
+            <a href="/visit.html" class="text-2xl font-semibold hover:text-[var(--color-terracotta)] transition-colors">Visit Us</a>
+            <a href="/contact.html" class="text-2xl font-semibold hover:text-[var(--color-terracotta)] transition-colors">Contact</a>
+            <div class="flex items-center space-x-4 pt-8">
+                <div class="theme-toggle" id="mobileThemeToggle">
+                    <div class="theme-toggle-circle"></div>
                 </div>
-
-                <!-- Service 2: Nasslackierung -->
-                <div class="premium-card p-8 fade-in-up delay-100">
-                    <div class="service-icon" style="background: linear-gradient(135deg, var(--eco-green), var(--accent-green));">
-                        <span>💧</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3" style="color: var(--primary-blue);">Nasslackierung</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Professionelle Nasslackierung für besondere Anforderungen an Optik und Oberflächenqualität. Perfekt für hochglänzende und spezielle Effektlackierungen.
-                    </p>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>2K-Lackierungen</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Metallic- und Effektlacke</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Hochglanzfinish möglich</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Individuelle Farbanpassungen</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Service 3: Spezialbeschichtungen -->
-                <div class="premium-card p-8 fade-in-up delay-200">
-                    <div class="service-icon" style="background: linear-gradient(135deg, var(--accent-orange), #FF6B35);">
-                        <span>🛡️</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3" style="color: var(--primary-blue);">Spezialbeschichtungen</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Innovative Funktionsbeschichtungen für extreme Anforderungen in Industrie, Architektur und Spezialanwendungen.
-                    </p>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Duplex-Systeme (C1–C5)</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Anti-Graffiti & Easy-to-Clean</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>ESD / Antistatisch</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Antimikrobiell (Silberionen)</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Service 4: Vorbehandlung -->
-                <div class="premium-card p-8 fade-in-up delay-300">
-                    <div class="service-icon" style="background: linear-gradient(135deg, var(--steel-blue), var(--primary-blue));">
-                        <span>🔬</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3" style="color: var(--primary-blue);">Vorbehandlung</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Professionelle Oberflächenvorbereitung als Grundlage für perfekte Beschichtungsergebnisse und langfristige Haltbarkeit.
-                    </p>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Entfettung und Reinigung</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Chromatierung / Phosphatierung</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Beizen und Passivierung</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Strahlen nach Bedarf</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Service 5: Korrosionsschutz -->
-                <div class="premium-card p-8 fade-in-up delay-400">
-                    <div class="service-icon" style="background: linear-gradient(135deg, #6A4C93, #8D5A97);">
-                        <span>🔒</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3" style="color: var(--primary-blue);">Korrosionsschutz</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Hochleistungs-Korrosionsschutzsysteme für extreme Witterungsbedingungen und chemische Belastungen nach DIN EN ISO 12944.
-                    </p>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Korrosivitätskategorien C1–C5</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Mehrschicht-Systeme</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Duplex-Beschichtungen</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Langzeitschutz garantiert</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Service 6: Chemiebeständigkeit -->
-                <div class="premium-card p-8 fade-in-up delay-500">
-                    <div class="service-icon" style="background: linear-gradient(135deg, #118AB2, #06D6A0);">
-                        <span>⚗️</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3" style="color: var(--primary-blue);">Chemiebeständige Beschichtungen</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Spezielle Beschichtungen für die Lebensmittel-, Pharma- und Chemieindustrie mit höchsten Hygiene- und Resistenzanforderungen.
-                    </p>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Säure- und laugenbeständig</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Lebensmittelecht</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>Sterilisierbar</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green);">✓</span>
-                            <span>GMP-konform</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Technical Specs -->
-            <div class="bg-gradient-to-br from-blue-900 to-blue-800 rounded-2xl p-8 md:p-12 text-white">
-                <h3 class="text-3xl font-bold mb-8 text-center">Technische Kapazitäten</h3>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="text-center">
-                        <div class="text-5xl font-bold mb-2">7.200 mm</div>
-                        <div class="text-blue-200">Maximale Länge</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-5xl font-bold mb-2">2.300 mm</div>
-                        <div class="text-blue-200">Maximale Breite</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-5xl font-bold mb-2">2.850 mm</div>
-                        <div class="text-blue-200">Maximale Höhe</div>
-                    </div>
-                </div>
-                <p class="text-center text-blue-100 mt-8 text-lg">
-                    Damit gehören wir zu den leistungsstärksten Beschichtungsbetrieben der Region und können auch Grossteile problemlos bearbeiten.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Referenzen Section -->
-    <section id="referenzen" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-4" style="color: var(--primary-blue);">Referenzen & Projekte</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Vertrauen Sie auf unsere Erfahrung – über 500 zufriedene Kunden aus Industrie, Architektur und Handwerk
-                </p>
-            </div>
-
-            <!-- Project Gallery -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                <div class="project-card fade-in-up" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                    <div class="project-overlay">
-                        <h3 class="text-white text-xl font-bold mb-2">Industriefassade</h3>
-                        <p class="text-blue-100">Grossflächige Pulverbeschichtung für Fassadenelemente in RAL 7016</p>
-                    </div>
-                </div>
-                <div class="project-card fade-in-up delay-100" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                    <div class="project-overlay">
-                        <h3 class="text-white text-xl font-bold mb-2">Maschinenbau-Komponenten</h3>
-                        <p class="text-blue-100">Hochpräzise Beschichtung mit ESD-Eigenschaften für Medizinaltechnik</p>
-                    </div>
-                </div>
-                <div class="project-card fade-in-up delay-200" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                    <div class="project-overlay">
-                        <h3 class="text-white text-xl font-bold mb-2">Architektur-Projekt</h3>
-                        <p class="text-blue-100">Sonderfarbton mit Anti-Graffiti-Beschichtung für öffentliches Gebäude</p>
-                    </div>
-                </div>
-                <div class="project-card fade-in-up delay-300" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-                    <div class="project-overlay">
-                        <h3 class="text-white text-xl font-bold mb-2">Geländer & Treppen</h3>
-                        <p class="text-blue-100">Duplex-System C5 für extreme Korrosionsbeständigkeit im Aussenbereich</p>
-                    </div>
-                </div>
-                <div class="project-card fade-in-up delay-400" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                    <div class="project-overlay">
-                        <h3 class="text-white text-xl font-bold mb-2">Lebensmittelindustrie</h3>
-                        <p class="text-blue-100">Lebensmittelechte, antibakterielle Beschichtung für Produktionsanlagen</p>
-                    </div>
-                </div>
-                <div class="project-card fade-in-up delay-500" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
-                    <div class="project-overlay">
-                        <h3 class="text-white text-xl font-bold mb-2">Stahlbau-Konstruktionen</h3>
-                        <p class="text-blue-100">Mehrschichtige Korrosionsschutzbeschichtung nach DIN EN ISO 12944</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Client Logos -->
-            <div class="bg-gray-50 rounded-2xl p-8 md:p-12">
-                <h3 class="text-2xl font-bold text-center mb-8" style="color: var(--primary-blue);">Ausgewählte Referenzkunden</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-                    <div class="bg-white p-6 rounded-lg text-center font-bold text-gray-400 border-2 border-gray-200">
-                        Matti Engineering
-                    </div>
-                    <div class="bg-white p-6 rounded-lg text-center font-bold text-gray-400 border-2 border-gray-200">
-                        Bleiker AG
-                    </div>
-                    <div class="bg-white p-6 rounded-lg text-center font-bold text-gray-400 border-2 border-gray-200">
-                        Mirad Group
-                    </div>
-                    <div class="bg-white p-6 rounded-lg text-center font-bold text-gray-400 border-2 border-gray-200">
-                        Regional KMUs
-                    </div>
-                </div>
-                <p class="text-center text-gray-600 mt-8">
-                    Und viele weitere zufriedene Kunden aus Industrie, Handwerk und Architektur
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Google Reviews Section -->
-    <section class="py-24" style="background: linear-gradient(135deg, var(--light-blue), var(--light-green));">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-4" style="color: var(--primary-blue);">Was unsere Kunden sagen</h2>
-                <div class="flex items-center justify-center gap-2 mb-4">
-                    <div class="star-rating">★★★★★</div>
-                    <span class="font-bold text-xl">4.9 / 5.0</span>
-                </div>
-                <a href="https://maps.app.goo.gl/j9nyJ2xA7xfe5MSU9" target="_blank" rel="noopener" class="text-blue-700 hover:text-blue-900 font-semibold underline">
-                    Alle Bewertungen auf Google ansehen →
+                <a href="https://instagram.com/friendsoffriends.sd" target="_blank" class="text-2xl hover:text-[var(--color-terracotta)] transition-colors">
+                    <i class="fab fa-instagram"></i>
                 </a>
             </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="premium-card p-6">
-                    <div class="star-rating mb-3">★★★★★</div>
-                    <p class="text-gray-700 italic mb-4">
-                        "Absolut zuverlässig und höchste Qualität. Die Teile waren perfekt beschichtet und pünktlich geliefert. Sehr professionelle Abwicklung!"
-                    </p>
-                    <div class="font-semibold">– Kunde aus Zürich</div>
-                </div>
-                <div class="premium-card p-6">
-                    <div class="star-rating mb-3">★★★★★</div>
-                    <p class="text-gray-700 italic mb-4">
-                        "Kompetente Beratung und faire Preise. Wir arbeiten seit Jahren mit Fankhauser zusammen und sind sehr zufrieden mit der Zusammenarbeit."
-                    </p>
-                    <div class="font-semibold">– Metallbaubetrieb SG</div>
-                </div>
-                <div class="premium-card p-6">
-                    <div class="star-rating mb-3">★★★★★</div>
-                    <p class="text-gray-700 italic mb-4">
-                        "Auch komplexe Spezialbeschichtungen werden hier erstklassig umgesetzt. Absolute Empfehlung für anspruchsvolle Projekte!"
-                    </p>
-                    <div class="font-semibold">– Architekturbüro TG</div>
+            <a href="#" class="btn-primary mt-8">Order Online</a>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center relative pt-20">
+        <div class="max-w-6xl mx-auto px-6 text-center text-white z-10">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 fade-in-up">
+                Southbay All Day
+            </h1>
+            <p class="text-xl md:text-2xl mb-4 fade-in-up delay-200" style="font-family: 'DM Serif Display', serif;">
+                Coffee, Vinyl & Community
+            </p>
+            <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto fade-in-up delay-300">
+                A warm, nostalgic gathering place serving specialty coffee, smash burgers, and the best vibes in National City
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up delay-400">
+                <a href="#" class="btn-primary text-lg">Order Now</a>
+                <a href="/visit.html" class="btn-secondary text-lg" style="border-color: white; color: white;">Visit Us</a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 fade-in delay-800">
+            <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+                <div class="w-1 h-3 bg-white rounded-full mt-2 animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Quick Links Section -->
+    <section class="py-20 px-6" style="background-color: var(--bg-secondary);">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Menu Card -->
+                <a href="/menu.html" class="card p-8 rounded-2xl reveal" style="background: linear-gradient(135deg, var(--color-terracotta), var(--color-olive)); color: white;">
+                    <div class="text-5xl mb-4">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-3">Menu</h3>
+                    <p class="text-lg mb-4">Specialty coffee, smash burgers & Filipino-inspired bites</p>
+                    <span class="inline-flex items-center text-lg font-semibold">
+                        Explore <i class="fas fa-arrow-right ml-2"></i>
+                    </span>
+                </a>
+                
+                <!-- Events Card -->
+                <a href="/events.html" class="card p-8 rounded-2xl reveal" style="background-color: var(--color-espresso); color: white;">
+                    <div class="text-5xl mb-4">
+                        <i class="fas fa-record-vinyl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-3">Events</h3>
+                    <p class="text-lg mb-4">Record exchanges, DJ sets & film nights</p>
+                    <span class="inline-flex items-center text-lg font-semibold">
+                        See What's On <i class="fas fa-arrow-right ml-2"></i>
+                    </span>
+                </a>
+                
+                <!-- Shop Card -->
+                <a href="/shop.html" class="card p-8 rounded-2xl reveal" style="background-color: var(--color-sage); color: white;">
+                    <div class="text-5xl mb-4">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-3">Shop</h3>
+                    <p class="text-lg mb-4">Merch, beans, vinyl & more</p>
+                    <span class="inline-flex items-center text-lg font-semibold">
+                        Browse <i class="fas fa-arrow-right ml-2"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Our Story Teaser -->
+    <section class="py-24 px-6" style="background-color: var(--bg-primary);">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <p class="text-sm font-bold tracking-widest uppercase mb-4" style="color: var(--color-terracotta);">Our Story</p>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                    More Than Just Coffee
+                </h2>
+                <p class="text-lg md:text-xl mb-6 leading-relaxed" style="color: var(--text-secondary);">
+                    We're serving the best that we can create while being reminded of who we are and where we come from.
+                </p>
+                <p class="text-lg mb-8 leading-relaxed" style="color: var(--text-muted);">
+                    Friends of Friends is a warm, nostalgic gathering place inspired by flavors of home, a friend's house, or walking home from school. Founded by Marco Laguna, chef Brandon James-Keeper, and Aaron Henderson, we're building a safe, creative space for South Bay creatives, families, and friends to connect over specialty coffee, incredible food, and vinyl records.
+                </p>
+                <a href="/about.html" class="btn-primary">Read Our Full Story</a>
+            </div>
+            <div class="reveal">
+                <!-- Placeholder: Interior photo showing the vinyl listening area with warm lighting, records on shelves, comfortable seating, and community atmosphere -->
+                <div class="rounded-2xl overflow-hidden shadow-2xl" style="background: linear-gradient(135deg, var(--color-olive), var(--color-terracotta)); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;">
+                    <div class="text-center p-8 text-white">
+                        <i class="fas fa-camera text-6xl mb-4 opacity-50"></i>
+                        <p class="text-sm">HERO IMAGE: Warm interior shot of the vinyl listening lounge with records displayed on wooden shelves, cozy seating area, people enjoying coffee and conversation, warm golden lighting, plants, and community vibe</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Ökologie Section -->
-    <section id="oekologie" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="fade-in-left">
-                    <h2 class="text-4xl lg:text-5xl font-bold mb-6" style="color: var(--eco-green);">Ökologie & Nachhaltigkeit</h2>
-                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
-                        Umweltschutz ist für uns nicht nur ein Schlagwort, sondern gelebte Praxis. Wir setzen konsequent auf umweltfreundliche Verfahren und modernste Technologien, um Ressourcen zu schonen und Emissionen zu minimieren.
-                    </p>
-                    <div class="space-y-4 mb-8">
-                        <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent-green); color: white;">
-                                <span class="text-xl">🌱</span>
-                            </div>
-                            <div>
-                                <div class="font-semibold text-lg mb-1">Lösemittelfreie Pulverbeschichtung</div>
-                                <div class="text-gray-600">Keine VOC-Emissionen, 100% umweltfreundlich und gesundheitsschonend</div>
-                            </div>
+    
+    <!-- Featured Drinks & Food -->
+    <section class="py-24 px-6" style="background-color: var(--bg-secondary);">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <p class="text-sm font-bold tracking-widest uppercase mb-4" style="color: var(--color-terracotta);">What We're Serving</p>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                    Signature Flavors
+                </h2>
+                <p class="text-xl max-w-3xl mx-auto" style="color: var(--text-muted);">
+                    From specialty lattes to smash burgers, every dish and drink is made with love
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Buko Pandan Latte -->
+                <div class="card rounded-2xl overflow-hidden reveal" style="background-color: var(--bg-primary);">
+                    <!-- Placeholder: Close-up of Buko Pandan Latte with vibrant green color, creamy texture, served in a ceramic cup, artistic latte art -->
+                    <div style="background: linear-gradient(135deg, var(--color-sage), var(--color-olive)); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; color: white;">
+                        <div class="text-center p-4">
+                            <i class="fas fa-coffee text-4xl mb-2 opacity-70"></i>
+                            <p class="text-xs">PHOTO: Buko Pandan Latte - vibrant green Filipino-inspired latte in ceramic cup with latte art</p>
                         </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent-green); color: white;">
-                                <span class="text-xl">♻️</span>
-                            </div>
-                            <div>
-                                <div class="font-semibold text-lg mb-1">Pulverrückgewinnung</div>
-                                <div class="text-gray-600">Überschüssiges Pulver wird vollständig recycelt und wiederverwendet</div>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent-green); color: white;">
-                                <span class="text-xl">⚡</span>
-                            </div>
-                            <div>
-                                <div class="font-semibold text-lg mb-1">Energieeffiziente Anlagen</div>
-                                <div class="text-gray-600">Moderne Öfen mit optimierter Wärmerückgewinnung</div>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent-green); color: white;">
-                                <span class="text-xl">💧</span>
-                            </div>
-                            <div>
-                                <div class="font-semibold text-lg mb-1">Geschlossene Wasserkreisläufe</div>
-                                <div class="text-gray-600">Minimaler Wasserverbrauch durch intelligente Aufbereitungssysteme</div>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent-green); color: white;">
-                                <span class="text-xl">📋</span>
-                            </div>
-                            <div>
-                                <div class="font-semibold text-lg mb-1">Umweltkonformes Abfallmanagement</div>
-                                <div class="text-gray-600">Fachgerechte Entsorgung und Wiederverwertung aller Reststoffe</div>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Buko Pandan Latte</h3>
+                        <p class="mb-4" style="color: var(--text-muted);">A Filipino-inspired favorite with coconut and pandan</p>
+                        <p class="text-xl font-bold" style="color: var(--color-terracotta);">$6.50</p>
                     </div>
                 </div>
-
-                <div class="fade-in-right">
-                    <div class="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-2xl mb-6">
-                        <h3 class="text-2xl font-bold mb-6" style="color: var(--eco-green);">Unser ökologischer Beitrag</h3>
-                        <div class="grid grid-cols-2 gap-6">
-                            <div class="text-center">
-                                <div class="text-4xl font-bold mb-2" style="color: var(--eco-green);">-85%</div>
-                                <div class="text-gray-600 text-sm">Weniger Emissionen vs. Nasslack</div>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-4xl font-bold mb-2" style="color: var(--eco-green);">98%</div>
-                                <div class="text-gray-600 text-sm">Pulverrückgewinnung</div>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-4xl font-bold mb-2" style="color: var(--eco-green);">100%</div>
-                                <div class="text-gray-600 text-sm">VOC-freie Verfahren</div>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-4xl font-bold mb-2" style="color: var(--eco-green);">-40%</div>
-                                <div class="text-gray-600 text-sm">Energieverbrauch seit 2015</div>
-                            </div>
+                
+                <!-- The OG Smash Burger -->
+                <div class="card rounded-2xl overflow-hidden reveal" style="background-color: var(--bg-primary);">
+                    <!-- Placeholder: Mouthwatering shot of The OG smash burger with melted cheese, crispy edges, fresh toppings, served on a basket -->
+                    <div style="background: linear-gradient(135deg, var(--color-terracotta), var(--color-espresso)); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; color: white;">
+                        <div class="text-center p-4">
+                            <i class="fas fa-burger text-4xl mb-2 opacity-70"></i>
+                            <p class="text-xs">PHOTO: The OG Smash Burger - juicy double smash burger, melted American cheese, crispy edges, fresh veggies on sesame bun</p>
                         </div>
                     </div>
-
-                    <div class="bg-gradient-to-br from-blue-900 to-green-900 p-8 rounded-2xl text-white">
-                        <h4 class="text-xl font-bold mb-3">Langlebigkeit schützt die Umwelt</h4>
-                        <p class="text-blue-100 leading-relaxed">
-                            Hochwertige Beschichtungen bedeuten längere Lebensdauer Ihrer Bauteile. Weniger Neuanschaffungen, weniger Ressourcenverbrauch – ein direkter Beitrag zum Umweltschutz und zur Nachhaltigkeit.
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">The OG Smash Burger</h3>
+                        <p class="mb-4" style="color: var(--text-muted);">Double smash patty, American cheese, house sauce</p>
+                        <p class="text-xl font-bold" style="color: var(--color-terracotta);">$12.00</p>
+                    </div>
+                </div>
+                
+                <!-- Palo Santo -->
+                <div class="card rounded-2xl overflow-hidden reveal" style="background-color: var(--bg-primary);">
+                    <!-- Placeholder: Artistic shot of Palo Santo drink with rich color, elegant glassware, garnish -->
+                    <div style="background: linear-gradient(135deg, var(--color-espresso), var(--color-olive)); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; color: white;">
+                        <div class="text-center p-4">
+                            <i class="fas fa-wine-glass text-4xl mb-2 opacity-70"></i>
+                            <p class="text-xs">PHOTO: Palo Santo specialty drink in elegant glass with aromatic garnish and rich color</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Palo Santo</h3>
+                        <p class="mb-4" style="color: var(--text-muted);">Signature espresso with aromatic notes</p>
+                        <p class="text-xl font-bold" style="color: var(--color-terracotta);">$5.50</p>
+                    </div>
+                </div>
+                
+                <!-- Lumpia -->
+                <div class="card rounded-2xl overflow-hidden reveal" style="background-color: var(--bg-primary);">
+                    <!-- Placeholder: Crispy golden lumpia arranged on a plate with dipping sauce -->
+                    <div style="background: linear-gradient(135deg, var(--color-olive), var(--color-terracotta)); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; color: white;">
+                        <div class="text-center p-4">
+                            <i class="fas fa-drumstick-bite text-4xl mb-2 opacity-70"></i>
+                            <p class="text-xs">PHOTO: Crispy golden lumpia (Filipino spring rolls) on plate with sweet chili dipping sauce</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Lumpia</h3>
+                        <p class="mb-4" style="color: var(--text-muted);">Crispy Filipino spring rolls with sweet chili sauce</p>
+                        <p class="text-xl font-bold" style="color: var(--color-terracotta);">$8.00</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 reveal">
+                <a href="/menu.html" class="btn-primary text-lg">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Upcoming Events -->
+    <section class="py-24 px-6" style="background-color: var(--bg-primary);">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <p class="text-sm font-bold tracking-widest uppercase mb-4" style="color: var(--color-terracotta);">What's Happening</p>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                    Upcoming Events
+                </h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- For the Record Event -->
+                <div class="card rounded-2xl overflow-hidden reveal" style="background-color: var(--bg-secondary);">
+                    <!-- Placeholder: Photo of record exchange event with people browsing vinyl, friendly atmosphere -->
+                    <div style="background: linear-gradient(135deg, var(--color-espresso), var(--color-terracotta)); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; color: white;">
+                        <div class="text-center p-6">
+                            <i class="fas fa-record-vinyl text-5xl mb-3 opacity-70"></i>
+                            <p class="text-sm">PHOTO: For the Record event - people browsing vinyl records, exchanging music, intimate community gathering</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="px-4 py-1 rounded-full text-sm font-semibold" style="background-color: var(--color-terracotta); color: white;">Monthly Event</span>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-3">For the Record</h3>
+                        <p class="text-lg mb-4" style="color: var(--text-muted);">
+                            Intimate record exchange and listening session. Bring a record, share a story, discover new sounds.
                         </p>
+                        <div class="flex items-center gap-4 text-sm font-medium mb-6" style="color: var(--text-secondary);">
+                            <span><i class="far fa-calendar mr-2"></i>Last Thursday of Month</span>
+                            <span><i class="far fa-clock mr-2"></i>6:00 PM - 9:00 PM</span>
+                        </div>
+                        <a href="/events.html" class="btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Film & Chill Night -->
+                <div class="card rounded-2xl overflow-hidden reveal" style="background-color: var(--bg-secondary);">
+                    <!-- Placeholder: Cozy film screening setup with projector, comfortable seating, ambient lighting -->
+                    <div style="background: linear-gradient(135deg, var(--color-sage), var(--color-olive)); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; color: white;">
+                        <div class="text-center p-6">
+                            <i class="fas fa-film text-5xl mb-3 opacity-70"></i>
+                            <p class="text-sm">PHOTO: Film & Chill setup - projector screening, cozy seating, ambient lighting, people relaxing with drinks</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="px-4 py-1 rounded-full text-sm font-semibold" style="background-color: var(--color-olive); color: white;">Weekly</span>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-3">Film & Chill Nights</h3>
+                        <p class="text-lg mb-4" style="color: var(--text-muted);">
+                            Curated film screenings, good company, and great coffee. A relaxed community movie night.
+                        </p>
+                        <div class="flex items-center gap-4 text-sm font-medium mb-6" style="color: var(--text-secondary);">
+                            <span><i class="far fa-calendar mr-2"></i>Every Friday</span>
+                            <span><i class="far fa-clock mr-2"></i>7:00 PM</span>
+                        </div>
+                        <a href="/events.html" class="btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 reveal">
+                <a href="/events.html" class="btn-primary text-lg">See All Events</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Community Section - Southbay All Day -->
+    <section class="py-24 px-6 parallax-section reveal" style="background: linear-gradient(135deg, rgba(61, 40, 23, 0.9), rgba(139, 149, 86, 0.85)), url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 800\"><rect fill=\"%238B9556\" width=\"1200\" height=\"800\"/></svg>'); color: white;">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl lg:text-7xl font-bold mb-8">
+                Support Yr Local Coffee Shop
+            </h2>
+            <p class="text-xl md:text-2xl mb-8 leading-relaxed" style="font-family: 'DM Serif Display', serif;">
+                We're more than a coffee shop—we're your neighbors, your friends, your community gathering place.
+            </p>
+            <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed">
+                Every cup poured, every burger served, every record spun is a celebration of South Bay culture, creativity, and connection. This is where friends become family.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/about.html" class="btn-primary text-lg" style="background-color: white; color: var(--color-espresso);">Our Story</a>
+                <a href="/visit.html" class="btn-secondary text-lg" style="border-color: white; color: white;">Visit Us Today</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Instagram Feed Section -->
+    <section class="py-24 px-6" style="background-color: var(--bg-secondary);">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <p class="text-sm font-bold tracking-widest uppercase mb-4" style="color: var(--color-terracotta);">Follow Along</p>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                    @friendsoffriends.sd
+                </h2>
+                <a href="https://instagram.com/friendsoffriends.sd" target="_blank" class="inline-flex items-center text-xl font-semibold hover:text-[var(--color-terracotta)] transition-colors">
+                    Follow us on Instagram <i class="fab fa-instagram ml-2"></i>
+                </a>
+            </div>
+            
+            <div class="instagram-grid reveal">
+                <!-- Instagram Post 1 -->
+                <div class="aspect-square rounded-xl overflow-hidden" style="background: linear-gradient(135deg, var(--color-terracotta), var(--color-espresso)); display: flex; align-items: center; justify-content: center; color: white;">
+                    <div class="text-center p-4">
+                        <i class="fab fa-instagram text-3xl mb-2 opacity-70"></i>
+                        <p class="text-xs">IG Post: Coffee latte art close-up</p>
+                    </div>
+                </div>
+                
+                <!-- Instagram Post 2 -->
+                <div class="aspect-square rounded-xl overflow-hidden" style="background: linear-gradient(135deg, var(--color-olive), var(--color-sage)); display: flex; align-items: center; justify-content: center; color: white;">
+                    <div class="text-center p-4">
+                        <i class="fab fa-instagram text-3xl mb-2 opacity-70"></i>
+                        <p class="text-xs">IG Post: Interior shot with vinyl records</p>
+                    </div>
+                </div>
+                
+                <!-- Instagram Post 3 -->
+                <div class="aspect-square rounded-xl overflow-hidden" style="background: linear-gradient(135deg, var(--color-sage), var(--color-terracotta)); display: flex; align-items: center; justify-content: center; color: white;">
+                    <div class="text-center p-4">
+                        <i class="fab fa-instagram text-3xl mb-2 opacity-70"></i>
+                        <p class="text-xs">IG Post: Smash burger food shot</p>
+                    </div>
+                </div>
+                
+                <!-- Instagram Post 4 -->
+                <div class="aspect-square rounded-xl overflow-hidden" style="background: linear-gradient(135deg, var(--color-espresso), var(--color-olive)); display: flex; align-items: center; justify-content: center; color: white;">
+                    <div class="text-center p-4">
+                        <i class="fab fa-instagram text-3xl mb-2 opacity-70"></i>
+                        <p class="text-xs">IG Post: Community event photo</p>
+                    </div>
+                </div>
+                
+                <!-- Instagram Post 5 -->
+                <div class="aspect-square rounded-xl overflow-hidden" style="background: linear-gradient(135deg, var(--color-terracotta), var(--color-sage)); display: flex; align-items: center; justify-content: center; color: white;">
+                    <div class="text-center p-4">
+                        <i class="fab fa-instagram text-3xl mb-2 opacity-70"></i>
+                        <p class="text-xs">IG Post: Barista making coffee</p>
+                    </div>
+                </div>
+                
+                <!-- Instagram Post 6 -->
+                <div class="aspect-square rounded-xl overflow-hidden" style="background: linear-gradient(135deg, var(--color-olive), var(--color-terracotta)); display: flex; align-items: center; justify-content: center; color: white;">
+                    <div class="text-center p-4">
+                        <i class="fab fa-instagram text-3xl mb-2 opacity-70"></i>
+                        <p class="text-xs">IG Post: Outdoor seating area</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Qualität Section -->
-    <section id="qualitaet" class="py-24" style="background: linear-gradient(to bottom, var(--off-white), white);">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-4" style="color: var(--primary-blue);">Qualität & Präzision</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Unser Qualitätsanspruch beginnt bei der Materialannahme und endet erst bei der finalen Auslieferung
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8 mb-16">
-                <div class="premium-card p-8">
-                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">Unser Qualitätsprozess</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-3">
-                            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent-blue); color: white; font-weight: bold;">1</div>
-                            <div>
-                                <div class="font-semibold">Eingangskontrolle</div>
-                                <div class="text-gray-600 text-sm">Prüfung aller Teile auf Beschaffenheit und Vorbehandlungsbedarf</div>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent-blue); color: white; font-weight: bold;">2</div>
-                            <div>
-                                <div class="font-semibold">Vorbehandlung nach Norm</div>
-                                <div class="text-gray-600 text-sm">Professionelle Reinigung und Oberflächenvorbereitung</div>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent-blue); color: white; font-weight: bold;">3</div>
-                            <div>
-                                <div class="font-semibold">Präzise Beschichtung</div>
-                                <div class="text-gray-600 text-sm">Automatisierte und manuelle Prozesse je nach Anforderung</div>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent-blue); color: white; font-weight: bold;">4</div>
-                            <div>
-                                <div class="font-semibold">Qualitätskontrolle</div>
-                                <div class="text-gray-600 text-sm">Visuelle und messtechnische Endkontrolle jedes Teils</div>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent-blue); color: white; font-weight: bold;">5</div>
-                            <div>
-                                <div class="font-semibold">Sichere Verpackung</div>
-                                <div class="text-gray-600 text-sm">Sorgfältige Verpackung zum Schutz der Oberflächen</div>
-                            </div>
+    
+    <!-- Location & Hours Preview -->
+    <section class="py-24 px-6" style="background-color: var(--bg-primary);">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <!-- Map -->
+            <div class="reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8">Find Us</h2>
+                <div class="rounded-2xl overflow-hidden shadow-2xl mb-6">
+                    <!-- Placeholder for Google Map -->
+                    <div style="background: linear-gradient(135deg, var(--color-sage), var(--color-olive)); aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center; color: white;">
+                        <div class="text-center p-6">
+                            <i class="fas fa-map-marker-alt text-5xl mb-3 opacity-70"></i>
+                            <p class="text-lg font-semibold">127 E 8th St</p>
+                            <p>National City, CA 91950</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="premium-card p-8">
-                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">Prüfverfahren & Standards</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green); font-size: 1.25rem;">✓</span>
-                            <span><strong>Schichtdickenmessung</strong> – Präzise Kontrolle der Beschichtungsstärke</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green); font-size: 1.25rem;">✓</span>
-                            <span><strong>Gitterschnitttest</strong> – Haftfestigkeitsprüfung nach DIN EN ISO 2409</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green); font-size: 1.25rem;">✓</span>
-                            <span><strong>Salzsprühtest</strong> – Korrosionsbeständigkeit nach DIN EN ISO 9227</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green); font-size: 1.25rem;">✓</span>
-                            <span><strong>Farbtonkontrolle</strong> – Spektrophotometrische Farbmessung</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green); font-size: 1.25rem;">✓</span>
-                            <span><strong>Oberflächenprüfung</strong> – Glanz-, Struktur- und Defektkontrolle</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span style="color: var(--accent-green); font-size: 1.25rem;">✓</span>
-                            <span><strong>Dokumentation</strong> – Lückenlose Rückverfolgbarkeit aller Prozessschritte</span>
-                        </li>
-                    </ul>
-                </div>
+                <a href="/visit.html" class="btn-primary">Get Directions</a>
             </div>
-
-            <!-- Quality Promise -->
-            <div class="bg-gradient-to-r from-blue-900 to-blue-800 rounded-2xl p-12 text-white text-center">
-                <h3 class="text-3xl font-bold mb-6">Unser Qualitätsversprechen</h3>
-                <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-                    Wir stehen zu 100% hinter unserer Arbeit. Sollte ein Beschichtungsergebnis nicht Ihren Erwartungen entsprechen, finden wir gemeinsam eine Lösung. Ihr Vertrauen ist unser höchstes Gut.
-                </p>
-                <div class="flex flex-wrap justify-center gap-6">
-                    <div class="flex items-center gap-2">
-                        <span class="text-2xl">✓</span>
-                        <span class="font-semibold">100% Termintreue</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-2xl">✓</span>
-                        <span class="font-semibold">Geprüfte Qualität</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-2xl">✓</span>
-                        <span class="font-semibold">Faire Preise</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-2xl">✓</span>
-                        <span class="font-semibold">Persönlicher Service</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Kontakt Section -->
-    <section id="kontakt" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-4" style="color: var(--primary-blue);">Kontakt aufnehmen</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Wir freuen uns auf Ihre Anfrage. Kontaktieren Sie uns für ein unverbindliches Angebot oder eine fachliche Beratung.
-                </p>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-12">
-                <!-- Contact Form -->
-                <div class="fade-in-left">
-                    <div class="premium-card p-8">
-                        <h3 class="text-2xl font-bold mb-6" style="color: var(--primary-blue);">Offerte anfragen</h3>
-                        <form id="contact-form" class="space-y-5">
-                            <div>
-                                <label class="block text-sm font-semibold mb-2 text-gray-700">Firma / Name *</label>
-                                <input type="text" name="name" required class="form-input" placeholder="Ihre Firma oder Name">
+            
+            <!-- Hours & Contact -->
+            <div class="reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8">Hours & Contact</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4" style="color: var(--color-terracotta);">Hours</h3>
+                        <div class="space-y-2 text-lg">
+                            <div class="flex justify-between">
+                                <span class="font-semibold">Monday - Thursday</span>
+                                <span>7:00 AM - 5:00 PM</span>
                             </div>
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-sm font-semibold mb-2 text-gray-700">E-Mail *</label>
-                                    <input type="email" name="email" required class="form-input" placeholder="ihre@email.ch">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-semibold mb-2 text-gray-700">Telefon</label>
-                                    <input type="tel" name="phone" class="form-input" placeholder="+41 ...">
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-semibold mb-2 text-gray-700">Betreff *</label>
-                                <input type="text" name="subject" required class="form-input" placeholder="z.B. Anfrage Pulverbeschichtung">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-semibold mb-2 text-gray-700">Ihre Nachricht *</label>
-                                <textarea name="message" required class="form-input" placeholder="Beschreiben Sie Ihr Projekt oder Ihre Anfrage..."></textarea>
-                            </div>
-                            <button type="submit" class="btn-primary w-full">
-                                <span id="submit-text">Anfrage senden</span>
-                                <span id="submit-loading" class="loading" style="display: none;"></span>
-                            </button>
-                            <div id="success-message" class="success-message">
-                                ✓ Vielen Dank! Ihre Nachricht wurde erfolgreich versendet. Wir melden uns schnellstmöglich bei Ihnen.
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="fade-in-right space-y-6">
-                    <!-- Address Card -->
-                    <div class="premium-card p-8">
-                        <h3 class="text-xl font-bold mb-4" style="color: var(--primary-blue);">📍 Standort</h3>
-                        <div class="space-y-2 text-gray-700">
-                            <p class="font-semibold text-lg">T. Fankhauser GmbH</p>
-                            <p>Beschichtungstechnik</p>
-                            <p>Industriestrasse 16</p>
-                            <p>CH-9300 Wittenbach SG</p>
-                            <p>Schweiz</p>
-                        </div>
-                    </div>
-
-                    <!-- Contact Details Card -->
-                    <div class="premium-card p-8">
-                        <h3 class="text-xl font-bold mb-4" style="color: var(--primary-blue);">📞 Kontaktdaten</h3>
-                        <div class="space-y-3">
-                            <div>
-                                <div class="text-sm text-gray-600 mb-1">Telefon</div>
-                                <a href="tel:+41712900505" class="text-lg font-semibold hover:text-blue-700" style="color: var(--accent-blue);">
-                                    +41 (0)71 290 05 05
-                                </a>
-                            </div>
-                            <div>
-                                <div class="text-sm text-gray-600 mb-1">E-Mail</div>
-                                <a href="mailto:info@beschichtungstechnik.ch" class="text-lg font-semibold hover:text-blue-700" style="color: var(--accent-blue);">
-                                    info@beschichtungstechnik.ch
-                                </a>
-                            </div>
-                            <div class="pt-4 border-t border-gray-200">
-                                <div class="text-sm text-gray-600 mb-2">Öffnungszeiten</div>
-                                <div class="text-gray-700">
-                                    <p>Montag – Freitag: 07:00 – 17:00 Uhr</p>
-                                    <p class="text-sm text-gray-500 mt-1">Terminvereinbarung empfohlen</p>
-                                </div>
+                            <div class="flex justify-between">
+                                <span class="font-semibold">Friday - Sunday</span>
+                                <span>7:00 AM - 8:00 PM</span>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Google Reviews CTA -->
-                    <div class="premium-card p-8" style="background: linear-gradient(135deg, var(--accent-blue), var(--steel-blue)); color: white;">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <div class="star-rating mb-2" style="color: #FFB800;">★★★★★</div>
-                                <div class="font-bold text-lg mb-1">4.9 / 5.0 auf Google</div>
-                                <div class="text-blue-100 text-sm">Über 50 Kundenbewertungen</div>
-                            </div>
-                            <a href="https://maps.app.goo.gl/j9nyJ2xA7xfe5MSU9" target="_blank" rel="noopener" class="btn-secondary border-white text-white hover:bg-white" style="padding: 0.75rem 1.5rem; white-space: nowrap;">
-                                Bewertungen
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4" style="color: var(--color-terracotta);">Contact</h3>
+                        <div class="space-y-3 text-lg">
+                            <a href="tel:6197966210" class="flex items-center hover:text-[var(--color-terracotta)] transition-colors">
+                                <i class="fas fa-phone w-6"></i>
+                                <span>(619) 796-6210</span>
                             </a>
+                            <a href="https://instagram.com/friendsoffriends.sd" target="_blank" class="flex items-center hover:text-[var(--color-terracotta)] transition-colors">
+                                <i class="fab fa-instagram w-6"></i>
+                                <span>@friendsoffriends.sd</span>
+                            </a>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt w-6"></i>
+                                <span>127 E 8th St, National City, CA 91950</span>
+                            </div>
                         </div>
                     </div>
+                    
+                    <a href="#" class="btn-primary inline-block mt-6">Order Online</a>
                 </div>
-            </div>
-
-            <!-- Google Maps -->
-            <div class="mt-12">
-                <h3 class="text-2xl font-bold mb-6 text-center" style="color: var(--primary-blue);">So finden Sie uns</h3>
-                <div class="rounded-2xl overflow-hidden shadow-lg" style="height: 450px;">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2696.8!2d9.37!3d47.48!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDI4JzUwLjQiTiA5wrAyMicxMi4wIkU!5e0!3m2!1sde!2sch!4v1234567890"
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-                <p class="text-center text-gray-600 mt-4">
-                    Gut erreichbar über die A1, Ausfahrt St. Gallen-Winkeln – nur 5 Minuten vom Autobahnanschluss
-                </p>
             </div>
         </div>
     </section>
-
+    
+    <!-- Newsletter Section -->
+    <section class="py-24 px-6" style="background-color: var(--bg-secondary);">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                Stay in the Loop
+            </h2>
+            <p class="text-xl mb-12" style="color: var(--text-muted);">
+                Get updates on new menu items, events, and community happenings
+            </p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
+                <input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    class="newsletter-input flex-1"
+                    required
+                />
+                <button type="submit" class="btn-primary whitespace-nowrap">
+                    Subscribe
+                </button>
+            </form>
+            <p class="text-sm mt-4" style="color: var(--text-muted);">
+                We respect your privacy. Unsubscribe anytime.
+            </p>
+        </div>
+    </section>
+    
     <!-- Footer -->
-    <footer class="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-16">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <!-- Company Info -->
+    <footer class="py-16 px-6" style="background-color: var(--color-espresso); color: white;">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- About -->
                 <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
-                            <span class="text-white font-bold text-xl">TF</span>
-                        </div>
-                        <div>
-                            <div class="font-bold">T. Fankhauser GmbH</div>
-                            <div class="text-sm text-gray-400">Beschichtungstechnik</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Ihr verlässlicher Partner für professionelle Beschichtungslösungen seit 1997.
+                    <h3 class="text-2xl font-bold mb-4" style="font-family: 'DM Serif Display', serif;">Friends of Friends</h3>
+                    <p class="mb-4 opacity-90">
+                        A warm, nostalgic gathering place in the heart of South Bay San Diego.
                     </p>
+                    <div class="flex gap-4 text-xl">
+                        <a href="https://instagram.com/friendsoffriends.sd" target="_blank" class="hover:text-[var(--color-terracotta)] transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com/friendsoffriends.sd" target="_blank" class="hover:text-[var(--color-terracotta)] transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
                 </div>
-
+                
                 <!-- Quick Links -->
                 <div>
-                    <h4 class="font-bold text-lg mb-4">Navigation</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#home" class="hover:text-white transition">Home</a></li>
-                        <li><a href="#ueber-uns" class="hover:text-white transition">Über uns</a></li>
-                        <li><a href="#leistungen" class="hover:text-white transition">Leistungen</a></li>
-                        <li><a href="#referenzen" class="hover:text-white transition">Referenzen</a></li>
-                        <li><a href="#kontakt" class="hover:text-white transition">Kontakt</a></li>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Home</a></li>
+                        <li><a href="/about.html" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">About Us</a></li>
+                        <li><a href="/menu.html" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Menu</a></li>
+                        <li><a href="/events.html" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Events</a></li>
                     </ul>
                 </div>
-
-                <!-- Services -->
+                
+                <!-- More Links -->
                 <div>
-                    <h4 class="font-bold text-lg mb-4">Leistungen</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>Pulverbeschichtung</li>
-                        <li>Nasslackierung</li>
-                        <li>Spezialbeschichtungen</li>
-                        <li>Korrosionsschutz</li>
-                        <li>Vorbehandlung</li>
+                    <h4 class="text-lg font-bold mb-4">Explore</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/shop.html" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Shop</a></li>
+                        <li><a href="/visit.html" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Visit Us</a></li>
+                        <li><a href="/contact.html" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Contact</a></li>
+                        <li><a href="#" class="opacity-90 hover:text-[var(--color-terracotta)] transition-colors">Order Online</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact -->
+                
+                <!-- Contact Info -->
                 <div>
-                    <h4 class="font-bold text-lg mb-4">Kontakt</h4>
-                    <ul class="space-y-2 text-gray-400 text-sm">
-                        <li>Industriestrasse 16</li>
-                        <li>CH-9300 Wittenbach SG</li>
+                    <h4 class="text-lg font-bold mb-4">Visit Us</h4>
+                    <ul class="space-y-2 opacity-90">
+                        <li>127 E 8th St</li>
+                        <li>National City, CA 91950</li>
+                        <li class="pt-2"><a href="tel:6197966210" class="hover:text-[var(--color-terracotta)] transition-colors">(619) 796-6210</a></li>
                         <li class="pt-2">
-                            <a href="tel:+41712900505" class="hover:text-white transition">
-                                +41 (0)71 290 05 05
-                            </a>
-                        </li>
-                        <li>
-                            <a href="mailto:info@beschichtungstechnik.ch" class="hover:text-white transition">
-                                info@beschichtungstechnik.ch
-                            </a>
+                            <strong>Mon-Thu:</strong> 7am-5pm<br/>
+                            <strong>Fri-Sun:</strong> 7am-8pm
                         </li>
                     </ul>
                 </div>
             </div>
-
-            <div class="border-t border-gray-700 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
-                    <div>
-                        © 2026 T. Fankhauser GmbH – Alle Rechte vorbehalten
-                    </div>
-                    <div class="flex gap-6">
-                        <a href="#" class="hover:text-white transition">Impressum</a>
-                        <a href="#" class="hover:text-white transition">Datenschutz</a>
-                        <a href="#" class="hover:text-white transition">AGB</a>
-                    </div>
-                </div>
+            
+            <div class="border-t border-white/20 pt-8 text-center">
+                <p class="opacity-75">
+                    &copy; 2024 Friends of Friends. All rights reserved. | Southbay All Day ☕🎵
+                </p>
             </div>
         </div>
     </footer>
-
-    <!-- Back to Top Button -->
-    <div class="back-to-top" id="back-to-top" aria-label="Nach oben">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
-        </svg>
-    </div>
-
+    
     <!-- JavaScript -->
     <script>
-        // Smooth scroll animations on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    if (entry.target.classList.contains('fade-in-up')) {
-                        entry.target.classList.add('animate-fade-in-up');
-                    }
-                    if (entry.target.classList.contains('fade-in')) {
-                        entry.target.classList.add('animate-fade-in');
-                    }
-                    if (entry.target.classList.contains('fade-in-left')) {
-                        entry.target.classList.add('animate-slide-in-left');
-                    }
-                    if (entry.target.classList.contains('fade-in-right')) {
-                        entry.target.classList.add('animate-slide-in-right');
-                    }
-                    if (entry.target.classList.contains('scale-in')) {
-                        entry.target.classList.add('animate-scale-in');
-                    }
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animation elements
-        document.querySelectorAll('.fade-in-up, .fade-in, .fade-in-left, .fade-in-right, .scale-in').forEach(el => {
-            observer.observe(el);
-        });
-
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+        const htmlElement = document.documentElement;
+        
+        // Check for saved theme preference or default to 'dark'
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        htmlElement.setAttribute('data-theme', currentTheme);
+        
+        function toggleTheme() {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+        
+        themeToggle.addEventListener('click', toggleTheme);
+        mobileThemeToggle.addEventListener('click', toggleTheme);
+        
         // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuClose = document.getElementById('mobile-menu-close');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.add('active');
-            document.body.style.overflow = 'hidden';
         });
-
-        mobileMenuClose.addEventListener('click', () => {
+        
+        closeMobileMenu.addEventListener('click', () => {
             mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
         });
-
-        mobileNavLinks.forEach(link => {
+        
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
             });
         });
-
-        // Back to Top Button
-        const backToTop = document.getElementById('back-to-top');
+        
+        // Navbar Scroll Effect
+        const nav = document.querySelector('nav');
         
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                backToTop.classList.add('visible');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
             } else {
-                backToTop.classList.remove('visible');
+                nav.classList.remove('scrolled');
             }
         });
-
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const revealPoint = 100;
+                
+                if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                }
             });
-        });
-
-        // Contact Form Handling
-        const contactForm = document.getElementById('contact-form');
-        const submitText = document.getElementById('submit-text');
-        const submitLoading = document.getElementById('submit-loading');
-        const successMessage = document.getElementById('success-message');
-
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // Show loading state
-            submitText.style.display = 'none';
-            submitLoading.style.display = 'inline-block';
-            
-            // Simulate form submission (replace with actual backend call)
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            
-            // Reset button
-            submitText.style.display = 'inline';
-            submitLoading.style.display = 'none';
-            
-            // Show success message
-            successMessage.classList.add('show');
-            contactForm.reset();
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                successMessage.classList.remove('show');
-            }, 5000);
-        });
-
-        // Smooth scroll for navigation links
+        };
+        
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check on page load
+        
+        // Smooth Scroll for Anchor Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const offset = 80;
-                    const targetPosition = target.offsetTop - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
                 }
             });
         });
-
-        // Add scroll effect to header
-        let lastScroll = 0;
-        const header = document.getElementById('header');
-
+        
+        // Newsletter Form Handler
+        const newsletterForm = document.querySelector('form');
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            alert(`Thanks for subscribing! We'll send updates to ${email}`);
+            e.target.reset();
+        });
+        
+        // Parallax Effect for Hero
         window.addEventListener('scroll', () => {
-            const currentScroll = window.scrollY;
-            
-            if (currentScroll > 100) {
-                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-            } else {
-                header.style.boxShadow = 'none';
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero-bg');
+            if (parallax) {
+                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
             }
-            
-            lastScroll = currentScroll;
         });
     </script>
 </body>
